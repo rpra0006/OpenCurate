@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B517BFDC28124C8A00C1D96A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B517BFDB28124C8A00C1D96A /* GoogleService-Info.plist */; };
+		B517BFDF28124D1C00C1D96A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B517BFDE28124D1C00C1D96A /* FirebaseAuth */; };
+		B517BFE128124D1C00C1D96A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B517BFE028124D1C00C1D96A /* FirebaseFirestore */; };
+		B517BFE328124D1D00C1D96A /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = B517BFE228124D1D00C1D96A /* FirebaseFirestoreSwift-Beta */; };
+		B517BFE528124D1D00C1D96A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B517BFE428124D1D00C1D96A /* FirebaseStorage */; };
 		B54BF1B9280FE2AD007F57C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BF1B8280FE2AD007F57C1 /* AppDelegate.swift */; };
 		B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BF1BA280FE2AD007F57C1 /* SceneDelegate.swift */; };
-		B54BF1BD280FE2AD007F57C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BF1BC280FE2AD007F57C1 /* HomeViewController.swift */; };
 		B54BF1C0280FE2AD007F57C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54BF1BE280FE2AD007F57C1 /* Main.storyboard */; };
 		B54BF1C2280FE2AF007F57C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54BF1C1280FE2AF007F57C1 /* Assets.xcassets */; };
 		B54BF1C5280FE2AF007F57C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54BF1C3280FE2AF007F57C1 /* LaunchScreen.storyboard */; };
+		B59B93EB281278FD0013ACAB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59B93EA281278FD0013ACAB /* UIView+Extension.swift */; };
+		B59B93EE28127D2F0013ACAB /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59B93ED28127D2F0013ACAB /* OnboardingCollectionViewCell.swift */; };
+		B5F1FC832812607600770B4F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC822812607600770B4F /* HomeViewController.swift */; };
+		B5F1FC85281260A700770B4F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC84281260A700770B4F /* MapViewController.swift */; };
+		B5F1FC882812619400770B4F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC872812619400770B4F /* OnboardingSlide.swift */; };
+		B5F1FC8F2812694900770B4F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC8E2812694900770B4F /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B517BFDB28124C8A00C1D96A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B54BF1B5280FE2AD007F57C1 /* OpenCurate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCurate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54BF1B8280FE2AD007F57C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B54BF1BA280FE2AD007F57C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B54BF1BC280FE2AD007F57C1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B54BF1BF280FE2AD007F57C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B54BF1C1280FE2AF007F57C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B54BF1C4280FE2AF007F57C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B54BF1C6280FE2AF007F57C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B54BF1C6280FE2AF007F57C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = OpenCurate/Application/Info.plist; sourceTree = SOURCE_ROOT; };
+		B59B93EA281278FD0013ACAB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		B59B93ED28127D2F0013ACAB /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5F1FC822812607600770B4F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B5F1FC84281260A700770B4F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B5F1FC872812619400770B4F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		B5F1FC8E2812694900770B4F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +47,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B517BFE328124D1D00C1D96A /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				B517BFE528124D1D00C1D96A /* FirebaseStorage in Frameworks */,
+				B517BFDF28124D1C00C1D96A /* FirebaseAuth in Frameworks */,
+				B517BFE128124D1C00C1D96A /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +76,77 @@
 		B54BF1B7280FE2AD007F57C1 /* OpenCurate */ = {
 			isa = PBXGroup;
 			children = (
-				B54BF1B8280FE2AD007F57C1 /* AppDelegate.swift */,
-				B54BF1BA280FE2AD007F57C1 /* SceneDelegate.swift */,
-				B54BF1BC280FE2AD007F57C1 /* HomeViewController.swift */,
-				B54BF1BE280FE2AD007F57C1 /* Main.storyboard */,
-				B54BF1C1280FE2AF007F57C1 /* Assets.xcassets */,
-				B54BF1C3280FE2AF007F57C1 /* LaunchScreen.storyboard */,
-				B54BF1C6280FE2AF007F57C1 /* Info.plist */,
+				B59B93EC28127B010013ACAB /* Models */,
+				B596D54428125F1A009FB524 /* ViewController */,
+				B5F1FC8C281268B300770B4F /* View */,
+				B5F1FC8B2812688E00770B4F /* Application */,
+				B59B93E9281278D00013ACAB /* Extensions */,
+				B5F1FC8D281268E300770B4F /* Resources */,
 			);
 			path = OpenCurate;
+			sourceTree = "<group>";
+		};
+		B596D54428125F1A009FB524 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B5F1FC822812607600770B4F /* HomeViewController.swift */,
+				B5F1FC84281260A700770B4F /* MapViewController.swift */,
+				B59B93EF28127D4A0013ACAB /* Onboarding */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B59B93E9281278D00013ACAB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B59B93EA281278FD0013ACAB /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B59B93EC28127B010013ACAB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5F1FC872812619400770B4F /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B59B93EF28127D4A0013ACAB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B5F1FC8E2812694900770B4F /* OnboardingViewController.swift */,
+				B59B93ED28127D2F0013ACAB /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B5F1FC8B2812688E00770B4F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B54BF1BA280FE2AD007F57C1 /* SceneDelegate.swift */,
+				B54BF1B8280FE2AD007F57C1 /* AppDelegate.swift */,
+				B54BF1C6280FE2AF007F57C1 /* Info.plist */,
+				B517BFDB28124C8A00C1D96A /* GoogleService-Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B5F1FC8C281268B300770B4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B54BF1C3280FE2AF007F57C1 /* LaunchScreen.storyboard */,
+				B54BF1BE280FE2AD007F57C1 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B5F1FC8D281268E300770B4F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B54BF1C1280FE2AF007F57C1 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +165,12 @@
 			dependencies = (
 			);
 			name = OpenCurate;
+			packageProductDependencies = (
+				B517BFDE28124D1C00C1D96A /* FirebaseAuth */,
+				B517BFE028124D1C00C1D96A /* FirebaseFirestore */,
+				B517BFE228124D1D00C1D96A /* FirebaseFirestoreSwift-Beta */,
+				B517BFE428124D1D00C1D96A /* FirebaseStorage */,
+			);
 			productName = OpenCurate;
 			productReference = B54BF1B5280FE2AD007F57C1 /* OpenCurate.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +199,9 @@
 				Base,
 			);
 			mainGroup = B54BF1AC280FE2AD007F57C1;
+			packageReferences = (
+				B517BFDD28124D1C00C1D96A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = B54BF1B6280FE2AD007F57C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B54BF1C5280FE2AF007F57C1 /* LaunchScreen.storyboard in Resources */,
+				B517BFDC28124C8A00C1D96A /* GoogleService-Info.plist in Resources */,
 				B54BF1C2280FE2AF007F57C1 /* Assets.xcassets in Resources */,
 				B54BF1C0280FE2AD007F57C1 /* Main.storyboard in Resources */,
 			);
@@ -138,9 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B54BF1BD280FE2AD007F57C1 /* HomeViewController.swift in Sources */,
 				B54BF1B9280FE2AD007F57C1 /* AppDelegate.swift in Sources */,
+				B59B93EB281278FD0013ACAB /* UIView+Extension.swift in Sources */,
+				B5F1FC8F2812694900770B4F /* OnboardingViewController.swift in Sources */,
+				B59B93EE28127D2F0013ACAB /* OnboardingCollectionViewCell.swift in Sources */,
 				B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */,
+				B5F1FC85281260A700770B4F /* MapViewController.swift in Sources */,
+				B5F1FC832812607600770B4F /* HomeViewController.swift in Sources */,
+				B5F1FC882812619400770B4F /* OnboardingSlide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +385,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OpenCurate/Info.plist;
+				INFOPLIST_FILE = OpenCurate/Application/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenCurate;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -315,7 +413,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OpenCurate/Info.plist;
+				INFOPLIST_FILE = OpenCurate/Application/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenCurate;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -356,6 +455,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B517BFDD28124D1C00C1D96A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B517BFDE28124D1C00C1D96A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B517BFDD28124D1C00C1D96A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		B517BFE028124D1C00C1D96A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B517BFDD28124D1C00C1D96A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		B517BFE228124D1D00C1D96A /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B517BFDD28124D1C00C1D96A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		B517BFE428124D1D00C1D96A /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B517BFDD28124D1C00C1D96A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B54BF1AD280FE2AD007F57C1 /* Project object */;
 }
