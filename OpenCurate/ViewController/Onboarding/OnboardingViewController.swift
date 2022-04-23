@@ -16,7 +16,7 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     
     @IBAction func signInAction(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "AuthNavigationController") as! UINavigationController
+        let controller = storyboard?.instantiateViewController(withIdentifier: "AuthNavigationController") as! UITabBarController
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }
@@ -34,8 +34,8 @@ class OnboardingViewController: UIViewController {
         onboardingCollectionView.dataSource = self
         
         // Style Button
-        registerButton.layer.borderColor = UIColor.systemBlue.cgColor
-        signInButton.layer.borderColor = UIColor.systemBlue.cgColor
+        registerButton.layer.borderColor = UIColor.systemOrange.cgColor
+        signInButton.layer.borderColor = UIColor.systemOrange.cgColor
         
         
         slides = [

@@ -1,13 +1,13 @@
 //
-//  HomeViewController.swift
+//  AccountViewController.swift
 //  OpenCurate
 //
-//  Created by Richard Pranjatno on 22/4/2022.
+//  Created by Richard Pranjatno on 23/4/2022.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class AccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
