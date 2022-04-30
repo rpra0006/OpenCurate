@@ -138,7 +138,5 @@ class DepartmentTableViewController: UITableViewController {
         }
         
     }
-    
-    func request
 
 }
