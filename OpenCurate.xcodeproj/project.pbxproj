@@ -32,6 +32,7 @@
 		B5F446D628137D50006C66F2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F446D528137D50006C66F2 /* AccountViewController.swift */; };
 		B5F5E1BE281D3C2000A6F1E3 /* METArtData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5E1BD281D3C2000A6F1E3 /* METArtData.swift */; };
 		B5F5E1C0281D429500A6F1E3 /* ArtDepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5E1BF281D429500A6F1E3 /* ArtDepartmentViewController.swift */; };
+		B5F5E1C2281D562900A6F1E3 /* ArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5E1C1281D562900A6F1E3 /* ArtViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		B5F446D528137D50006C66F2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		B5F5E1BD281D3C2000A6F1E3 /* METArtData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = METArtData.swift; sourceTree = "<group>"; };
 		B5F5E1BF281D429500A6F1E3 /* ArtDepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDepartmentViewController.swift; sourceTree = "<group>"; };
+		B5F5E1C1281D562900A6F1E3 /* ArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			children = (
 				B5AB9B5A281D10B700FEEF36 /* DepartmentTableViewController.swift */,
 				B5F5E1BF281D429500A6F1E3 /* ArtDepartmentViewController.swift */,
+				B5F5E1C1281D562900A6F1E3 /* ArtViewController.swift */,
 			);
 			path = Department;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				B5F1FC882812619400770B4F /* OnboardingSlide.swift in Sources */,
 				B5136FFB2818C1B600023A1B /* DepartmentCollectionViewCell.swift in Sources */,
 				B5F446D628137D50006C66F2 /* AccountViewController.swift in Sources */,
+				B5F5E1C2281D562900A6F1E3 /* ArtViewController.swift in Sources */,
 				B5AB9B5E281D140600FEEF36 /* DepartmentObjectData.swift in Sources */,
 				B5AB9B5B281D10B700FEEF36 /* DepartmentTableViewController.swift in Sources */,
 			);

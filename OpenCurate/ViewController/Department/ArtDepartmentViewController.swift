@@ -11,26 +11,44 @@ class ArtDepartmentViewController: UIViewController {
     
     let REQUEST_ART_STRING = "https://collectionapi.metmuseum.org/public/collection/v1/objects/"
     var objectId: String?
+    var imageURL: URL?
+    
+    
+    @IBOutlet weak var artTitleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var artistBioLabel: UILabel!
+    @IBOutlet weak var periodLabel: UILabel!
+    @IBOutlet weak var artCultureLabel: UILabel!
+    @IBOutlet weak var artTypeLabel: UILabel!
+    @IBOutlet weak var artistNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        artTitleLabel.numberOfLines = 0 // Remove Truncation at the end
         Task {
             await requestArtFromObj()
         }
-        // Do any additional setup after loading the view.
+        
+        
     }
     
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "viewArtSegue" {
+            if let destination = segue.destination as? ArtViewController {
+                destination.imgURL = imageURL
+                destination.hidesBottomBarWhenPushed = true
+            }
+
+        }
     }
-    */
+
     
     
     // Request Art Details from Object
@@ -50,13 +68,60 @@ class ArtDepartmentViewController: UIViewController {
             
             let artDataRequest = try decoder.decode(METArtData.self, from: data)
             
-            navigationItem.title = artDataRequest.title
+            if artDataRequest.title!.isEmpty {
+                artTitleLabel.text = "N/A"
+            } else {
+                artTitleLabel.text = artDataRequest.title
+            }
+            
+            if artDataRequest.objectDate!.isEmpty {
+                dateLabel.text = "N/A"
+            } else {
+                dateLabel.text = artDataRequest.objectDate
+            }
+            
+            if artDataRequest.artistDisplayBio!.isEmpty {
+                artistBioLabel.text = "N/A"
+            } else {
+                artistBioLabel.text = artDataRequest.artistDisplayBio
+            }
+            
+            if artDataRequest.artistDisplayName!.isEmpty {
+                artistNameLabel.text = "N/A"
+            } else {
+                artistNameLabel.text = artDataRequest.artistDisplayName
+            }
+            
+            if artDataRequest.period!.isEmpty {
+                periodLabel.text = "N/A"
+            } else {
+                periodLabel.text = artDataRequest.period
+            }
+            
+            if artDataRequest.culture!.isEmpty {
+                artCultureLabel.text = "N/A"
+            } else {
+                artCultureLabel.text = artDataRequest.culture
+            }
+            
+            if artDataRequest.objectName!.isEmpty {
+                artTypeLabel.text = "N/A"
+            } else {
+                artTypeLabel.text = artDataRequest.objectName
+            }
+        
+            if let imageString = artDataRequest.primaryImage {
+                imageURL = URL(string: imageString)
+            }
+            
             
         }
         catch let error {
             print(error)
         }
     }
-
-
+    
+    @IBAction func viewArtButton(_ sender: Any) {
+        performSegue(withIdentifier: "viewArtSegue", sender: self)
+    }
 }
