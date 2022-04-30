@@ -10,22 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Department List-->
-        <scene sceneID="RCd-9X-HHe">
-            <objects>
-                <viewController id="jw7-9q-RXW" customClass="DepartmentViewController" customModule="OpenCurate" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aGD-Zf-u32">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="eWU-dc-dPC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Department List" id="Fdp-eP-hJy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NXI-pb-TRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4461" y="-1785"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="XPn-F2-5LA">
             <objects>
@@ -200,7 +184,7 @@
                     <connections>
                         <outlet property="departmentCollectionView" destination="GpU-hr-m5l" id="Efh-27-eCe"/>
                         <outlet property="logoButton" destination="D24-hl-RIn" id="RHS-5Y-qSb"/>
-                        <segue destination="jw7-9q-RXW" kind="show" identifier="departmentSegue" id="8gH-67-ZSM"/>
+                        <segue destination="0de-LQ-pZE" kind="show" identifier="departmentTableSegue" id="bba-4T-vCC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Y0-tT-dPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -241,6 +225,44 @@
             </objects>
             <point key="canvasLocation" x="2663" y="-593"/>
         </scene>
+        <!--Department Name-->
+        <scene sceneID="TJr-v1-vk3">
+            <objects>
+                <tableViewController id="0de-LQ-pZE" customClass="DepartmentTableViewController" customModule="OpenCurate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="4S4-aV-Tpm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="artIdCell" textLabel="5uy-OE-9ot" style="IBUITableViewCellStyleDefault" id="XTF-a3-29H">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XTF-a3-29H" id="GzI-s4-Tyx">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5uy-OE-9ot">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0de-LQ-pZE" id="8bT-L2-QV0"/>
+                            <outlet property="delegate" destination="0de-LQ-pZE" id="7a9-Yh-91Y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Department Name" id="0Je-41-6Dr"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aja-ei-MS0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6045" y="-1797"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="WPH-b5-BEl">
             <objects>
@@ -266,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13S-VS-TLc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5544.9275362318849" y="-1021.2053571428571"/>
+            <point key="canvasLocation" x="6045" y="-1125"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="6eB-5I-5mT">

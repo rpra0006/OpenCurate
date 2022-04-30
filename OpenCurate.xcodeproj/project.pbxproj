@@ -23,7 +23,8 @@
 		B54BF1C5280FE2AF007F57C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54BF1C3280FE2AF007F57C1 /* LaunchScreen.storyboard */; };
 		B59B93EB281278FD0013ACAB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59B93EA281278FD0013ACAB /* UIView+Extension.swift */; };
 		B59B93EE28127D2F0013ACAB /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59B93ED28127D2F0013ACAB /* OnboardingCollectionViewCell.swift */; };
-		B5AB9B59281D0DD700FEEF36 /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB9B58281D0DD700FEEF36 /* DepartmentViewController.swift */; };
+		B5AB9B5B281D10B700FEEF36 /* DepartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB9B5A281D10B700FEEF36 /* DepartmentTableViewController.swift */; };
+		B5AB9B5E281D140600FEEF36 /* DepartmentObjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB9B5D281D140600FEEF36 /* DepartmentObjectData.swift */; };
 		B5F1FC832812607600770B4F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC822812607600770B4F /* HomeViewController.swift */; };
 		B5F1FC85281260A700770B4F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC84281260A700770B4F /* MapViewController.swift */; };
 		B5F1FC882812619400770B4F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC872812619400770B4F /* OnboardingSlide.swift */; };
@@ -46,7 +47,8 @@
 		B54BF1C6280FE2AF007F57C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = OpenCurate/Application/Info.plist; sourceTree = SOURCE_ROOT; };
 		B59B93EA281278FD0013ACAB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B59B93ED28127D2F0013ACAB /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
-		B5AB9B58281D0DD700FEEF36 /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
+		B5AB9B5A281D10B700FEEF36 /* DepartmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewController.swift; sourceTree = "<group>"; };
+		B5AB9B5D281D140600FEEF36 /* DepartmentObjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentObjectData.swift; sourceTree = "<group>"; };
 		B5F1FC822812607600770B4F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B5F1FC84281260A700770B4F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B5F1FC872812619400770B4F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				B5136FFF2818D91200023A1B /* DepartmentData.swift */,
 				B51370012818EEDC00023A1B /* METDepartmentData.swift */,
+				B5AB9B5D281D140600FEEF36 /* DepartmentObjectData.swift */,
 			);
 			path = METData;
 			sourceTree = "<group>";
@@ -157,7 +160,7 @@
 		B5AB9B57281D0DA900FEEF36 /* Department */ = {
 			isa = PBXGroup;
 			children = (
-				B5AB9B58281D0DD700FEEF36 /* DepartmentViewController.swift */,
+				B5AB9B5A281D10B700FEEF36 /* DepartmentTableViewController.swift */,
 			);
 			path = Department;
 			sourceTree = "<group>";
@@ -294,7 +297,6 @@
 				B59B93EB281278FD0013ACAB /* UIView+Extension.swift in Sources */,
 				B5F1FC8F2812694900770B4F /* OnboardingViewController.swift in Sources */,
 				B59B93EE28127D2F0013ACAB /* OnboardingCollectionViewCell.swift in Sources */,
-				B5AB9B59281D0DD700FEEF36 /* DepartmentViewController.swift in Sources */,
 				B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */,
 				B51370022818EEDC00023A1B /* METDepartmentData.swift in Sources */,
 				B5F1FC85281260A700770B4F /* MapViewController.swift in Sources */,
@@ -302,6 +304,8 @@
 				B5F1FC882812619400770B4F /* OnboardingSlide.swift in Sources */,
 				B5136FFB2818C1B600023A1B /* DepartmentCollectionViewCell.swift in Sources */,
 				B5F446D628137D50006C66F2 /* AccountViewController.swift in Sources */,
+				B5AB9B5E281D140600FEEF36 /* DepartmentObjectData.swift in Sources */,
+				B5AB9B5B281D10B700FEEF36 /* DepartmentTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -73,9 +73,10 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "departmentSegue" {
-            let destination = segue.destination as! DepartmentViewController
+        if segue.identifier == "departmentTableSegue" {
+            let destination = segue.destination as! DepartmentTableViewController
             destination.navigationItem.title = selectedDepartment?.departmentName
+            destination.departmentId = selectedDepartment?.departmentId
         }
     }
 
@@ -98,7 +99,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedDepartment = newDepartments[indexPath.row]
-        performSegue(withIdentifier: "departmentSegue", sender: nil)
+        performSegue(withIdentifier: "departmentTableSegue", sender: nil)
     }
 }
 
