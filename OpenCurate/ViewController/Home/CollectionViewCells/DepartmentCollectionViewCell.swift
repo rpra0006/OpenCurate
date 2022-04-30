@@ -13,7 +13,7 @@ class DepartmentCollectionViewCell: UICollectionViewCell {
     static let identifier = String(describing: DepartmentCollectionViewCell.self)
 
     @IBOutlet weak var departmentLabel: UILabel!
- 
+
     func setup(_ department: DepartmentData) {
         departmentLabel.text = department.departmentName
     }

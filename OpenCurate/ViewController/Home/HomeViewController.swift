@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     let DEPARTMENT_REQUEST = "https://collectionapi.metmuseum.org/public/collection/v1/departments"
     
     var newDepartments = [DepartmentData]()
+    var selectedDepartment: DepartmentData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,15 +65,20 @@ class HomeViewController: UIViewController {
     private func registerCells(){
         departmentCollectionView.register(UINib(nibName: DepartmentCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DepartmentCollectionViewCell.identifier)
     }
-    /*
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "departmentSegue" {
+            let destination = segue.destination as! DepartmentViewController
+            destination.navigationItem.title = selectedDepartment?.departmentName
+        }
     }
-    */
+
 
 }
 
@@ -88,6 +94,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DepartmentCollectionViewCell.identifier, for: indexPath) as! DepartmentCollectionViewCell
         cell.setup(newDepartments[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedDepartment = newDepartments[indexPath.row]
+        performSegue(withIdentifier: "departmentSegue", sender: nil)
     }
 }
 

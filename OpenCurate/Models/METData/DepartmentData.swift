@@ -10,9 +10,11 @@ import Foundation
 class DepartmentData: NSObject, Decodable {
     
     var departmentName: String?
+    var departmentId: Int?
     
     private enum RootKeys: String, CodingKey {
         case departmentName = "displayName"
+        case departmentId
     }
     
     required init(from decoder: Decoder) throws {
@@ -20,6 +22,7 @@ class DepartmentData: NSObject, Decodable {
         let container = try decoder.container(keyedBy: RootKeys.self)
         
         departmentName = try container.decode(String.self, forKey: .departmentName)
+        departmentId = try container.decode(Int.self, forKey: .departmentId)
     }
     
 }

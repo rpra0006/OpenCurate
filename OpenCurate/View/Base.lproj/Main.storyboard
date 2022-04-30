@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Department List-->
+        <scene sceneID="RCd-9X-HHe">
+            <objects>
+                <viewController id="jw7-9q-RXW" customClass="DepartmentViewController" customModule="OpenCurate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aGD-Zf-u32">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eWU-dc-dPC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Department List" id="Fdp-eP-hJy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXI-pb-TRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4461" y="-1785"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="XPn-F2-5LA">
             <objects>
@@ -134,7 +150,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
-                                                            <segue destination="fwJ-hN-u7z" kind="show" id="e8z-Ve-2Gi"/>
+                                                            <segue destination="fwJ-hN-u7z" kind="show" identifier="mapSegue" id="e8z-Ve-2Gi"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -184,6 +200,7 @@
                     <connections>
                         <outlet property="departmentCollectionView" destination="GpU-hr-m5l" id="Efh-27-eCe"/>
                         <outlet property="logoButton" destination="D24-hl-RIn" id="RHS-5Y-qSb"/>
+                        <segue destination="jw7-9q-RXW" kind="show" identifier="departmentSegue" id="8gH-67-ZSM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Y0-tT-dPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

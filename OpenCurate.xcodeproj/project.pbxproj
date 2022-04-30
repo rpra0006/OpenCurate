@@ -23,6 +23,7 @@
 		B54BF1C5280FE2AF007F57C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54BF1C3280FE2AF007F57C1 /* LaunchScreen.storyboard */; };
 		B59B93EB281278FD0013ACAB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59B93EA281278FD0013ACAB /* UIView+Extension.swift */; };
 		B59B93EE28127D2F0013ACAB /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59B93ED28127D2F0013ACAB /* OnboardingCollectionViewCell.swift */; };
+		B5AB9B59281D0DD700FEEF36 /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB9B58281D0DD700FEEF36 /* DepartmentViewController.swift */; };
 		B5F1FC832812607600770B4F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC822812607600770B4F /* HomeViewController.swift */; };
 		B5F1FC85281260A700770B4F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC84281260A700770B4F /* MapViewController.swift */; };
 		B5F1FC882812619400770B4F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC872812619400770B4F /* OnboardingSlide.swift */; };
@@ -45,6 +46,7 @@
 		B54BF1C6280FE2AF007F57C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = OpenCurate/Application/Info.plist; sourceTree = SOURCE_ROOT; };
 		B59B93EA281278FD0013ACAB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B59B93ED28127D2F0013ACAB /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5AB9B58281D0DD700FEEF36 /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
 		B5F1FC822812607600770B4F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B5F1FC84281260A700770B4F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B5F1FC872812619400770B4F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		B596D54428125F1A009FB524 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B5AB9B57281D0DA900FEEF36 /* Department */,
 				B5F446D428137D33006C66F2 /* Account */,
 				B5F446D328136B74006C66F2 /* Home */,
 				B5F1FC84281260A700770B4F /* MapViewController.swift */,
@@ -149,6 +152,14 @@
 				B59B93ED28127D2F0013ACAB /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B5AB9B57281D0DA900FEEF36 /* Department */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB9B58281D0DD700FEEF36 /* DepartmentViewController.swift */,
+			);
+			path = Department;
 			sourceTree = "<group>";
 		};
 		B5F1FC8B2812688E00770B4F /* Application */ = {
@@ -283,6 +294,7 @@
 				B59B93EB281278FD0013ACAB /* UIView+Extension.swift in Sources */,
 				B5F1FC8F2812694900770B4F /* OnboardingViewController.swift in Sources */,
 				B59B93EE28127D2F0013ACAB /* OnboardingCollectionViewCell.swift in Sources */,
+				B5AB9B59281D0DD700FEEF36 /* DepartmentViewController.swift in Sources */,
 				B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */,
 				B51370022818EEDC00023A1B /* METDepartmentData.swift in Sources */,
 				B5F1FC85281260A700770B4F /* MapViewController.swift in Sources */,
