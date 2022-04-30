@@ -10,9 +10,12 @@ import UIKit
 class DepartmentTableViewController: UITableViewController {
     
     let CELL_DEPTOBJ = "artIdCell"
-    let REQUEST_STRING = "https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds="
+    let REQUEST_DEPARTMENT_STRING = "https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds="
+    
     var departmentId: Int?
     var departmentObj = [Int]()
+    var selectedObjId: String?
+    
     var indicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
@@ -61,6 +64,15 @@ class DepartmentTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        selectedObjId = String(departmentObj[indexPath.row])
+        
+        performSegue(withIdentifier: "artDepartmentSegue", sender: self)
+    }
 
 
     /*
@@ -98,19 +110,25 @@ class DepartmentTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "artDepartmentSegue" {
+            if let destination = segue.destination as? ArtDepartmentViewController {
+                destination.objectId = selectedObjId
+            }
+        }
     }
-    */
     
+    
+    // Request all objects associated to department id
     func requestDepartmentObjects() async {
         
-        guard let requestURL = URL(string: REQUEST_STRING + String(departmentId!)) else {
+        guard let requestURL = URL(string: REQUEST_DEPARTMENT_STRING + String(departmentId!)) else {
             print("Invalid URL")
             return
         }
@@ -119,9 +137,7 @@ class DepartmentTableViewController: UITableViewController {
         
         do {
             let (data, _) = try await URLSession.shared.data(for: urlRequest)
-            DispatchQueue.main.async {
-                self.indicator.stopAnimating()
-            }
+            indicator.stopAnimating()
             
             let decoder = JSONDecoder()
             let deptObjData = try decoder.decode(DepartmentObjectData.self, from: data)
@@ -138,5 +154,4 @@ class DepartmentTableViewController: UITableViewController {
         }
         
     }
-
 }

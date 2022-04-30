@@ -30,6 +30,8 @@
 		B5F1FC882812619400770B4F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC872812619400770B4F /* OnboardingSlide.swift */; };
 		B5F1FC8F2812694900770B4F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC8E2812694900770B4F /* OnboardingViewController.swift */; };
 		B5F446D628137D50006C66F2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F446D528137D50006C66F2 /* AccountViewController.swift */; };
+		B5F5E1BE281D3C2000A6F1E3 /* METArtData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5E1BD281D3C2000A6F1E3 /* METArtData.swift */; };
+		B5F5E1C0281D429500A6F1E3 /* ArtDepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5E1BF281D429500A6F1E3 /* ArtDepartmentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		B5F1FC872812619400770B4F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		B5F1FC8E2812694900770B4F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		B5F446D528137D50006C66F2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		B5F5E1BD281D3C2000A6F1E3 /* METArtData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = METArtData.swift; sourceTree = "<group>"; };
+		B5F5E1BF281D429500A6F1E3 /* ArtDepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDepartmentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 				B5136FFF2818D91200023A1B /* DepartmentData.swift */,
 				B51370012818EEDC00023A1B /* METDepartmentData.swift */,
 				B5AB9B5D281D140600FEEF36 /* DepartmentObjectData.swift */,
+				B5F5E1BD281D3C2000A6F1E3 /* METArtData.swift */,
 			);
 			path = METData;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B5AB9B5A281D10B700FEEF36 /* DepartmentTableViewController.swift */,
+				B5F5E1BF281D429500A6F1E3 /* ArtDepartmentViewController.swift */,
 			);
 			path = Department;
 			sourceTree = "<group>";
@@ -294,9 +300,11 @@
 			files = (
 				B51370002818D91200023A1B /* DepartmentData.swift in Sources */,
 				B54BF1B9280FE2AD007F57C1 /* AppDelegate.swift in Sources */,
+				B5F5E1C0281D429500A6F1E3 /* ArtDepartmentViewController.swift in Sources */,
 				B59B93EB281278FD0013ACAB /* UIView+Extension.swift in Sources */,
 				B5F1FC8F2812694900770B4F /* OnboardingViewController.swift in Sources */,
 				B59B93EE28127D2F0013ACAB /* OnboardingCollectionViewCell.swift in Sources */,
+				B5F5E1BE281D3C2000A6F1E3 /* METArtData.swift in Sources */,
 				B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */,
 				B51370022818EEDC00023A1B /* METDepartmentData.swift in Sources */,
 				B5F1FC85281260A700770B4F /* MapViewController.swift in Sources */,
