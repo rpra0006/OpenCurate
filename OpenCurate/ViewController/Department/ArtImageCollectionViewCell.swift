@@ -10,5 +10,5 @@ import UIKit
 class ArtImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var artImage: UIImageView!
-    
+
 }
