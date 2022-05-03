@@ -12,6 +12,7 @@ class ArtDepartmentViewController: UIViewController {
     let REQUEST_ART_STRING = "https://collectionapi.metmuseum.org/public/collection/v1/objects/"
     var objectId: String?
     var imageURL: URL?
+    var additionalImgURL = [URL]()
     
     
     @IBOutlet weak var artTitleLabel: UILabel!
@@ -42,7 +43,8 @@ class ArtDepartmentViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "viewArtSegue" {
             if let destination = segue.destination as? ArtViewController {
-                destination.imgURL = imageURL
+                destination.mainImgURL = imageURL
+                destination.additionaImgURL = additionalImgURL
                 destination.hidesBottomBarWhenPushed = true
             }
 
@@ -114,6 +116,11 @@ class ArtDepartmentViewController: UIViewController {
                 imageURL = URL(string: imageString)
             }
             
+            if let additionalImage = artDataRequest.additionalImages {
+                for image in additionalImage {
+                    additionalImgURL.append(URL(string: image)!)
+                }
+            }
             
         }
         catch let error {

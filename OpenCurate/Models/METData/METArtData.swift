@@ -18,6 +18,7 @@ class METArtData: NSObject, Decodable {
     var artistDisplayName: String?
     var artistDisplayBio: String?
     var objectDate: String?
+    var additionalImages: [String]?
     
     
     private enum CodingKeys: String, CodingKey {
@@ -30,6 +31,7 @@ class METArtData: NSObject, Decodable {
         case artistDisplayName
         case artistDisplayBio
         case objectDate
+        case additionalImages
     }
     
 }
