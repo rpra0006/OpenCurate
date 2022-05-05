@@ -25,6 +25,10 @@
 		B59B93EE28127D2F0013ACAB /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59B93ED28127D2F0013ACAB /* OnboardingCollectionViewCell.swift */; };
 		B5AB9B5B281D10B700FEEF36 /* DepartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB9B5A281D10B700FEEF36 /* DepartmentTableViewController.swift */; };
 		B5AB9B5E281D140600FEEF36 /* DepartmentObjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB9B5D281D140600FEEF36 /* DepartmentObjectData.swift */; };
+		B5EF758B2823A06400B06269 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF758A2823A06400B06269 /* AuthViewController.swift */; };
+		B5EF758D2823A2EB00B06269 /* UIViewController+displayMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF758C2823A2EB00B06269 /* UIViewController+displayMessage.swift */; };
+		B5EF75902823A4F800B06269 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF758F2823A4F800B06269 /* FirebaseController.swift */; };
+		B5EF75922823A51B00B06269 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF75912823A51B00B06269 /* DatabaseProtocol.swift */; };
 		B5F0EBFB2820C76E00BD7FFC /* ArtImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F0EBFA2820C76E00BD7FFC /* ArtImageCollectionViewCell.swift */; };
 		B5F1FC832812607600770B4F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC822812607600770B4F /* HomeViewController.swift */; };
 		B5F1FC85281260A700770B4F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC84281260A700770B4F /* MapViewController.swift */; };
@@ -53,6 +57,10 @@
 		B59B93ED28127D2F0013ACAB /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5AB9B5A281D10B700FEEF36 /* DepartmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewController.swift; sourceTree = "<group>"; };
 		B5AB9B5D281D140600FEEF36 /* DepartmentObjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentObjectData.swift; sourceTree = "<group>"; };
+		B5EF758A2823A06400B06269 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		B5EF758C2823A2EB00B06269 /* UIViewController+displayMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+displayMessage.swift"; sourceTree = "<group>"; };
+		B5EF758F2823A4F800B06269 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		B5EF75912823A51B00B06269 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		B5F0EBFA2820C76E00BD7FFC /* ArtImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5F1FC822812607600770B4F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B5F1FC84281260A700770B4F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				B59B93EA281278FD0013ACAB /* UIView+Extension.swift */,
+				B5EF758C2823A2EB00B06269 /* UIViewController+displayMessage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -151,6 +160,7 @@
 		B59B93EC28127B010013ACAB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B5EF758E2823A4D800B06269 /* LocalData */,
 				B5136FFD2818D8E500023A1B /* METData */,
 				B5F1FC872812619400770B4F /* OnboardingSlide.swift */,
 			);
@@ -175,6 +185,15 @@
 				B5F0EBFA2820C76E00BD7FFC /* ArtImageCollectionViewCell.swift */,
 			);
 			path = Department;
+			sourceTree = "<group>";
+		};
+		B5EF758E2823A4D800B06269 /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				B5EF758F2823A4F800B06269 /* FirebaseController.swift */,
+				B5EF75912823A51B00B06269 /* DatabaseProtocol.swift */,
+			);
+			path = LocalData;
 			sourceTree = "<group>";
 		};
 		B5F1FC8B2812688E00770B4F /* Application */ = {
@@ -218,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				B5F446D528137D50006C66F2 /* AccountViewController.swift */,
+				B5EF758A2823A06400B06269 /* AuthViewController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -311,6 +331,7 @@
 				B5F1FC8F2812694900770B4F /* OnboardingViewController.swift in Sources */,
 				B59B93EE28127D2F0013ACAB /* OnboardingCollectionViewCell.swift in Sources */,
 				B5F5E1BE281D3C2000A6F1E3 /* METArtData.swift in Sources */,
+				B5EF758D2823A2EB00B06269 /* UIViewController+displayMessage.swift in Sources */,
 				B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */,
 				B51370022818EEDC00023A1B /* METDepartmentData.swift in Sources */,
 				B5F1FC85281260A700770B4F /* MapViewController.swift in Sources */,
@@ -318,8 +339,11 @@
 				B5F1FC832812607600770B4F /* HomeViewController.swift in Sources */,
 				B5F1FC882812619400770B4F /* OnboardingSlide.swift in Sources */,
 				B5136FFB2818C1B600023A1B /* DepartmentCollectionViewCell.swift in Sources */,
+				B5EF75902823A4F800B06269 /* FirebaseController.swift in Sources */,
+				B5EF75922823A51B00B06269 /* DatabaseProtocol.swift in Sources */,
 				B5F446D628137D50006C66F2 /* AccountViewController.swift in Sources */,
 				B5F5E1C2281D562900A6F1E3 /* ArtViewController.swift in Sources */,
+				B5EF758B2823A06400B06269 /* AuthViewController.swift in Sources */,
 				B5AB9B5E281D140600FEEF36 /* DepartmentObjectData.swift in Sources */,
 				B5AB9B5B281D10B700FEEF36 /* DepartmentTableViewController.swift in Sources */,
 			);

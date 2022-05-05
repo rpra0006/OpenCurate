@@ -11,7 +11,6 @@ class OnboardingViewController: UIViewController {
     
     
     @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var onboardingCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
@@ -34,7 +33,6 @@ class OnboardingViewController: UIViewController {
         onboardingCollectionView.dataSource = self
         
         // Style Button
-        registerButton.layer.borderColor = UIColor.systemOrange.cgColor
         signInButton.layer.borderColor = UIColor.systemOrange.cgColor
         
         
