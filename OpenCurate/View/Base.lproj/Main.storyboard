@@ -522,9 +522,6 @@
                                                 <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9T2-pD-EzY">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="691"/>
                                                     <gestureRecognizers/>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="7ot-wD-bUE" appends="YES" id="Did-Na-X8e"/>
-                                                    </connections>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -566,11 +563,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B97-UH-p1P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="7ot-wD-bUE">
-                    <connections>
-                        <action selector="zoomGesture:" destination="g61-nX-o1c" id="ltR-od-fdn"/>
-                    </connections>
-                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="8021.739130434783" y="-1797.3214285714284"/>
         </scene>

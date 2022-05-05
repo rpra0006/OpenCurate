@@ -41,15 +41,6 @@ class ArtViewController: UIViewController {
     }
     */
     
-    @IBAction func zoomGesture(_ gestureRecognizer: UIPinchGestureRecognizer) {
-        
-        if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
-              gestureRecognizer.view?.transform = (gestureRecognizer.view?.transform.scaledBy(x:gestureRecognizer.scale, y: gestureRecognizer.scale))!
-              gestureRecognizer.scale = 1.0
-           }
-        
-    }
-    
     func renderImages() {
         
         guard let mainImg = mainImgURL else {
@@ -81,6 +72,7 @@ extension ArtViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "artImageCell", for: indexPath) as! ArtImageCollectionViewCell
         
         cell.artImage.image = storedImages[indexPath.row]
+        cell.artImage.enableZoom()
         
         return cell
     }
