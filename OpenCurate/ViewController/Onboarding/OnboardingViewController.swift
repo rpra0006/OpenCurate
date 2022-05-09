@@ -10,15 +10,9 @@ import UIKit
 class OnboardingViewController: UIViewController {
     
     
-    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var onboardingCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-    
-    @IBAction func signInAction(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "AuthNavigationController") as! UITabBarController
-        controller.modalPresentationStyle = .fullScreen
-        present(controller, animated: true, completion: nil)
-    }
     
     var slides: [OnboardingSlide] = []
     
@@ -33,7 +27,7 @@ class OnboardingViewController: UIViewController {
         onboardingCollectionView.dataSource = self
         
         // Style Button
-        signInButton.layer.borderColor = UIColor.systemOrange.cgColor
+        continueButton.layer.borderColor = UIColor.systemOrange.cgColor
         
         
         slides = [

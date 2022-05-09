@@ -12,6 +12,15 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBAction func loginAction(_ sender: Any) {
+        performSegue(withIdentifier: "authSegue", sender: sender)
+    }
+    
+    
+    @IBAction func registerAction(_ sender: Any) {
+        performSegue(withIdentifier: "authSegue", sender: sender)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -211,14 +211,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oJd-0Y-CjB">
-                                <rect key="frame" x="40" y="363" width="334" height="34"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b97-Tl-4ht">
-                                <rect key="frame" x="40" y="431" width="334" height="34"/>
+                                <rect key="frame" x="40" y="434" width="334" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -230,8 +224,13 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Login">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginClicked:" destination="XCl-Il-d99" eventType="touchUpInside" id="Bz9-iJ-elT"/>
+                                    <action selector="loginAction:" destination="XCl-Il-d99" eventType="touchUpInside" id="k2G-9Y-ccw"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OpenCurateLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Dmm-h3-Z15">
@@ -242,50 +241,64 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5X-Ja-HMB">
                                 <rect key="frame" x="131" y="642" width="152" height="32"/>
-                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Register">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="registerClicked:" destination="XCl-Il-d99" eventType="touchUpInside" id="FrQ-aB-e0D"/>
+                                    <action selector="registerAction:" destination="XCl-Il-d99" eventType="touchUpInside" id="rEL-LR-2OV"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oJd-0Y-CjB">
+                                <rect key="frame" x="40" y="370" width="334" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y0X-Ax-QrR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="b97-Tl-4ht" secondAttribute="trailing" constant="40" id="39P-Mk-xnx"/>
-                            <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="oJd-0Y-CjB" secondAttribute="trailing" constant="40" id="5A8-Wt-Pcl"/>
-                            <constraint firstItem="fhx-8m-dXL" firstAttribute="top" secondItem="b97-Tl-4ht" secondAttribute="bottom" constant="137" id="98y-dE-G0b"/>
                             <constraint firstItem="Dmm-h3-Z15" firstAttribute="top" secondItem="Y0X-Ax-QrR" secondAttribute="top" id="9Md-X4-2hD"/>
+                            <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="oJd-0Y-CjB" secondAttribute="trailing" constant="40" id="Bfe-Pa-IIz"/>
+                            <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="b97-Tl-4ht" secondAttribute="trailing" constant="40" id="F4w-Y5-hQc"/>
                             <constraint firstItem="d5X-Ja-HMB" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="131" id="IQb-fx-c5c"/>
                             <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="fhx-8m-dXL" secondAttribute="trailing" constant="131" id="JPM-WP-jze"/>
-                            <constraint firstItem="b97-Tl-4ht" firstAttribute="top" secondItem="oJd-0Y-CjB" secondAttribute="bottom" constant="34" id="Kkv-R5-bcY"/>
-                            <constraint firstItem="oJd-0Y-CjB" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="40" id="LgT-qG-cMM"/>
                             <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="d5X-Ja-HMB" secondAttribute="trailing" constant="131" id="Rd6-Dr-VAV"/>
-                            <constraint firstItem="oJd-0Y-CjB" firstAttribute="top" secondItem="Dmm-h3-Z15" secondAttribute="bottom" constant="169" id="Ww5-yV-TtX"/>
                             <constraint firstItem="Dmm-h3-Z15" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="20" id="Xwk-We-QuV"/>
                             <constraint firstItem="d5X-Ja-HMB" firstAttribute="top" secondItem="fhx-8m-dXL" secondAttribute="bottom" constant="8" id="d47-xK-m8t"/>
+                            <constraint firstItem="b97-Tl-4ht" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="40" id="hbS-Lg-88y"/>
                             <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="Dmm-h3-Z15" secondAttribute="trailing" constant="20" id="iHD-QJ-eV4"/>
                             <constraint firstItem="Y0X-Ax-QrR" firstAttribute="bottom" secondItem="d5X-Ja-HMB" secondAttribute="bottom" constant="188" id="kTO-C0-bvp"/>
+                            <constraint firstItem="b97-Tl-4ht" firstAttribute="top" secondItem="oJd-0Y-CjB" secondAttribute="bottom" constant="30" id="mv5-FP-RWN"/>
                             <constraint firstItem="fhx-8m-dXL" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="131" id="nhA-wH-M92"/>
-                            <constraint firstItem="b97-Tl-4ht" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="40" id="qYw-d8-RYU"/>
+                            <constraint firstItem="oJd-0Y-CjB" firstAttribute="top" secondItem="Dmm-h3-Z15" secondAttribute="bottom" constant="176" id="oUu-g0-97C"/>
+                            <constraint firstItem="oJd-0Y-CjB" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="40" id="vkK-JH-h4p"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="JB6-hu-reP"/>
                     <connections>
                         <outlet property="emailTextField" destination="oJd-0Y-CjB" id="QnL-vn-voE"/>
                         <outlet property="passwordTextField" destination="b97-Tl-4ht" id="XfI-e7-0Rc"/>
+                        <segue destination="ITB-tV-xq1" kind="presentation" identifier="authSegue" modalPresentationStyle="fullScreen" id="mIh-tb-pTH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60S-uQ-vPJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1834.7826086956522" y="-593.30357142857144"/>
+            <point key="canvasLocation" x="1454" y="-593"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cPI-49-lCb">
             <objects>
                 <tabBarController storyboardIdentifier="AuthNavigationController" id="ITB-tV-xq1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9kA-sr-cLU"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CKi-VS-44Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -689,7 +702,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="signInAction:" destination="upG-JT-E1f" eventType="touchUpInside" id="zTH-Zx-jCv"/>
+                                    <segue destination="XCl-Il-d99" kind="presentation" modalPresentationStyle="fullScreen" id="Dst-IP-Fx1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -710,14 +723,14 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="continueButton" destination="nzC-oK-L3j" id="4Nl-5A-Wld"/>
                         <outlet property="onboardingCollectionView" destination="jjG-cx-TNe" id="Dck-D9-Apd"/>
                         <outlet property="pageControl" destination="kb3-oc-HO6" id="nOP-ND-0br"/>
-                        <outlet property="signInButton" destination="nzC-oK-L3j" id="4Nl-5A-Wld"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2N-9C-w41" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988" y="-593"/>
+            <point key="canvasLocation" x="413" y="-593"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bZx-5t-wvI">
@@ -746,7 +759,7 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="AccentColor">
-            <color red="1" green="0.58399999141693115" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
