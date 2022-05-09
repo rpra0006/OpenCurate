@@ -224,11 +224,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Login">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                 </buttonConfiguration>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginAction:" destination="XCl-Il-d99" eventType="touchUpInside" id="k2G-9Y-ccw"/>
                                 </connections>
@@ -266,21 +261,21 @@
                         <viewLayoutGuide key="safeArea" id="Y0X-Ax-QrR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="d5X-Ja-HMB" firstAttribute="top" secondItem="fhx-8m-dXL" secondAttribute="bottom" constant="8" id="1hy-zP-eYN"/>
+                            <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="d5X-Ja-HMB" secondAttribute="trailing" constant="131" id="5JJ-dp-z27"/>
                             <constraint firstItem="Dmm-h3-Z15" firstAttribute="top" secondItem="Y0X-Ax-QrR" secondAttribute="top" id="9Md-X4-2hD"/>
                             <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="oJd-0Y-CjB" secondAttribute="trailing" constant="40" id="Bfe-Pa-IIz"/>
                             <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="b97-Tl-4ht" secondAttribute="trailing" constant="40" id="F4w-Y5-hQc"/>
-                            <constraint firstItem="d5X-Ja-HMB" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="131" id="IQb-fx-c5c"/>
-                            <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="fhx-8m-dXL" secondAttribute="trailing" constant="131" id="JPM-WP-jze"/>
-                            <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="d5X-Ja-HMB" secondAttribute="trailing" constant="131" id="Rd6-Dr-VAV"/>
+                            <constraint firstItem="fhx-8m-dXL" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="131" id="M1r-sZ-HSy"/>
                             <constraint firstItem="Dmm-h3-Z15" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="20" id="Xwk-We-QuV"/>
-                            <constraint firstItem="d5X-Ja-HMB" firstAttribute="top" secondItem="fhx-8m-dXL" secondAttribute="bottom" constant="8" id="d47-xK-m8t"/>
                             <constraint firstItem="b97-Tl-4ht" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="40" id="hbS-Lg-88y"/>
                             <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="Dmm-h3-Z15" secondAttribute="trailing" constant="20" id="iHD-QJ-eV4"/>
-                            <constraint firstItem="Y0X-Ax-QrR" firstAttribute="bottom" secondItem="d5X-Ja-HMB" secondAttribute="bottom" constant="188" id="kTO-C0-bvp"/>
+                            <constraint firstItem="Y0X-Ax-QrR" firstAttribute="trailing" secondItem="fhx-8m-dXL" secondAttribute="trailing" constant="131" id="mg5-3i-HSx"/>
                             <constraint firstItem="b97-Tl-4ht" firstAttribute="top" secondItem="oJd-0Y-CjB" secondAttribute="bottom" constant="30" id="mv5-FP-RWN"/>
-                            <constraint firstItem="fhx-8m-dXL" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="131" id="nhA-wH-M92"/>
                             <constraint firstItem="oJd-0Y-CjB" firstAttribute="top" secondItem="Dmm-h3-Z15" secondAttribute="bottom" constant="176" id="oUu-g0-97C"/>
                             <constraint firstItem="oJd-0Y-CjB" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="40" id="vkK-JH-h4p"/>
+                            <constraint firstItem="fhx-8m-dXL" firstAttribute="top" secondItem="b97-Tl-4ht" secondAttribute="bottom" constant="134" id="wPT-vS-YRT"/>
+                            <constraint firstItem="d5X-Ja-HMB" firstAttribute="leading" secondItem="Y0X-Ax-QrR" secondAttribute="leading" constant="131" id="wQj-DK-4ZX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JB6-hu-reP"/>
@@ -587,7 +582,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JUg-MB-5ui">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUg-MB-5ui">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
                         </subviews>
@@ -601,6 +596,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2ea-lm-UEO"/>
+                    <connections>
+                        <outlet property="mapView" destination="JUg-MB-5ui" id="JfL-nM-PWz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13S-VS-TLc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
