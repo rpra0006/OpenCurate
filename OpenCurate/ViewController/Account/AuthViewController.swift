@@ -7,24 +7,63 @@
 
 import UIKit
 
-class AuthViewController: UIViewController {
+class AuthViewController: UIViewController, DatabaseListener {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    weak var databaseController: DatabaseProtocol?
+    var listenerType:ListenerType = .auth
+    var authStatus: Bool?
+    
     @IBAction func loginAction(_ sender: Any) {
-        performSegue(withIdentifier: "authSegue", sender: sender)
+        
+        if isValidAuth(emailTextField.text ?? "" , passwordTextField.text ?? ""){
+            databaseController?.signIn(email: emailTextField.text!, password: passwordTextField.text!) { [weak self]result in
+                switch result {
+                    case .success(let p):
+                    DispatchQueue.main.async {
+                        self!.performSegue(withIdentifier: "authSegue", sender: sender)
+                        print("Logged in")
+                    }
+                    case .failure(let error):
+                    DispatchQueue.main.async {
+                        self!.displayMessage(title: "Error", message: "Password and/or email is invalid. Please try again.")
+                    }
+                }
+            }
+        }
+        return
     }
     
     
     @IBAction func registerAction(_ sender: Any) {
-        performSegue(withIdentifier: "authSegue", sender: sender)
+        
+        if isValidAuth(emailTextField.text ?? "", passwordTextField.text ?? ""){
+            databaseController?.register(email: emailTextField.text!, password: passwordTextField.text!) { [weak self] result in
+                switch result {
+                    case .success(let p):
+                    DispatchQueue.main.async {
+                        self!.performSegue(withIdentifier: "authSegue", sender: sender)
+                        print("Registration is succesfull ")
+                    }
+                    case .failure(let error):
+                    DispatchQueue.main.async {
+                        self!.displayMessage(title: "Error", message: "Email has already been used.")
+                    }
+                }
+            }
+        }
+        return
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        databaseController = appDelegate?.databaseController
+        databaseController?.addListener(listener: self)
     }
     
 
@@ -38,59 +77,6 @@ class AuthViewController: UIViewController {
     }
     */
     
-    /*
-    @IBAction func loginClicked(_ sender: Any) {
-        
-        if isValidAuth(emailTextField.text ?? "" , passwordTextField.text ?? ""){
-            
-            databaseController?.signIn(email: emailTextField.text!, password: passwordTextField.text!) { [weak self]result in
-                switch result {
-                    case .success(let p):
-                    DispatchQueue.main.async {
-                        self!.performSegue(withIdentifier: "authSegue", sender: sender)
-                        print("Logged in")
-                    }
-                    case .failure(let error):
-                    DispatchQueue.main.async {
-                        self!.displayMessage(title: "Error", message: "Password and/or email is invalid. Please try again.")
-                    }
-                    
-                }
-                
-            }
-
-
-        }
-        return
-        
-    }
-    */
-    
-    /*
-    @IBAction func registerClicked(_ sender: Any) {
-     
-     if isValidAuth(emailTextField.text ?? "", passwordTextField.text ?? ""){
-         
-         databaseController?.register(email: emailTextField.text!, password: passwordTextField.text!) { [weak self] result in
-             switch result {
-                 case .success(let p):
-                 DispatchQueue.main.async {
-                     self!.performSegue(withIdentifier: "authSegue", sender: sender)
-                     print("Registration is succesfull ")
-                 }
-                 case .failure(let error):
-                 DispatchQueue.main.async {
-                     self!.displayMessage(title: "Error", message: "Email has already been used.")
-                 }
-                 
-             }
-         }
-
-     }
-     return
-    }
-    */
-
     func isValidAuth(_ email: String, _ password: String) -> Bool {
         
         let emailTest = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}")
@@ -106,6 +92,11 @@ class AuthViewController: UIViewController {
         }
         displayMessage(title: "Error", message: "Please enter a valid email address.")
         return false
+    }
+    
+    func authSuccess(change: DatabaseChange, status: Bool) {
+        
+        authStatus = status
     }
     
 }

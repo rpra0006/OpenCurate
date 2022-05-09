@@ -31,6 +31,7 @@
 		B5EF75922823A51B00B06269 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF75912823A51B00B06269 /* DatabaseProtocol.swift */; };
 		B5EF75942823AB4C00B06269 /* UIImageView+enableZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF75932823AB4C00B06269 /* UIImageView+enableZoom.swift */; };
 		B5F0EBFB2820C76E00BD7FFC /* ArtImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F0EBFA2820C76E00BD7FFC /* ArtImageCollectionViewCell.swift */; };
+		B5F0F1352828CF6A00F73F31 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F0F1342828CF6A00F73F31 /* MulticastDelegate.swift */; };
 		B5F1FC832812607600770B4F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC822812607600770B4F /* HomeViewController.swift */; };
 		B5F1FC85281260A700770B4F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC84281260A700770B4F /* MapViewController.swift */; };
 		B5F1FC882812619400770B4F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC872812619400770B4F /* OnboardingSlide.swift */; };
@@ -64,6 +65,7 @@
 		B5EF75912823A51B00B06269 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		B5EF75932823AB4C00B06269 /* UIImageView+enableZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+enableZoom.swift"; sourceTree = "<group>"; };
 		B5F0EBFA2820C76E00BD7FFC /* ArtImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5F0F1342828CF6A00F73F31 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		B5F1FC822812607600770B4F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B5F1FC84281260A700770B4F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B5F1FC872812619400770B4F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
@@ -144,7 +146,7 @@
 				B5AB9B57281D0DA900FEEF36 /* Department */,
 				B5F446D428137D33006C66F2 /* Account */,
 				B5F446D328136B74006C66F2 /* Home */,
-				B5F1FC84281260A700770B4F /* MapViewController.swift */,
+				B5F0F1372828D69100F73F31 /* Map */,
 				B59B93EF28127D4A0013ACAB /* Onboarding */,
 			);
 			path = ViewController;
@@ -193,10 +195,19 @@
 		B5EF758E2823A4D800B06269 /* LocalData */ = {
 			isa = PBXGroup;
 			children = (
+				B5F0F1342828CF6A00F73F31 /* MulticastDelegate.swift */,
 				B5EF758F2823A4F800B06269 /* FirebaseController.swift */,
 				B5EF75912823A51B00B06269 /* DatabaseProtocol.swift */,
 			);
 			path = LocalData;
+			sourceTree = "<group>";
+		};
+		B5F0F1372828D69100F73F31 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B5F1FC84281260A700770B4F /* MapViewController.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		B5F1FC8B2812688E00770B4F /* Application */ = {
@@ -338,6 +349,7 @@
 				B5EF758D2823A2EB00B06269 /* UIViewController+displayMessage.swift in Sources */,
 				B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */,
 				B51370022818EEDC00023A1B /* METDepartmentData.swift in Sources */,
+				B5F0F1352828CF6A00F73F31 /* MulticastDelegate.swift in Sources */,
 				B5F1FC85281260A700770B4F /* MapViewController.swift in Sources */,
 				B5F0EBFB2820C76E00BD7FFC /* ArtImageCollectionViewCell.swift in Sources */,
 				B5F1FC832812607600770B4F /* HomeViewController.swift in Sources */,
