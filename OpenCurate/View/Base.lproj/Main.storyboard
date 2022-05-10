@@ -583,16 +583,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUg-MB-5ui">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jG5-77-lvA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JUg-MB-5ui" firstAttribute="leading" secondItem="jG5-77-lvA" secondAttribute="leading" id="08E-ln-c9R"/>
-                            <constraint firstItem="JUg-MB-5ui" firstAttribute="top" secondItem="jG5-77-lvA" secondAttribute="top" id="3m0-g4-d3R"/>
-                            <constraint firstItem="JUg-MB-5ui" firstAttribute="trailing" secondItem="jG5-77-lvA" secondAttribute="trailing" id="INQ-CC-Y5t"/>
-                            <constraint firstItem="JUg-MB-5ui" firstAttribute="bottom" secondItem="jG5-77-lvA" secondAttribute="bottom" id="nWO-gN-FZY"/>
+                            <constraint firstItem="JUg-MB-5ui" firstAttribute="trailing" secondItem="jG5-77-lvA" secondAttribute="trailing" id="gkj-qe-gLL"/>
+                            <constraint firstItem="JUg-MB-5ui" firstAttribute="top" secondItem="abd-JO-I23" secondAttribute="top" id="sc6-MZ-Dib"/>
+                            <constraint firstAttribute="bottom" secondItem="JUg-MB-5ui" secondAttribute="bottom" id="wjt-nh-cpK"/>
+                            <constraint firstItem="JUg-MB-5ui" firstAttribute="leading" secondItem="jG5-77-lvA" secondAttribute="leading" id="xNp-T0-Wld"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2ea-lm-UEO"/>
@@ -602,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13S-VS-TLc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6045" y="-1125"/>
+            <point key="canvasLocation" x="6044.9275362318849" y="-1125"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="6eB-5I-5mT">
@@ -761,6 +762,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
