@@ -42,7 +42,7 @@ class ArtViewController: UIViewController {
     */
     
     func renderImages() {
-        
+        print("Fetching images")
         guard let mainImg = mainImgURL else {
             storedImages.append(UIImage(named: "placeholderImg")!)
             return
@@ -57,6 +57,8 @@ class ArtViewController: UIViewController {
                 storedImages.append(UIImage(data: data)!)
             }
         }
+        
+        print("Completed")
     }
 
 }

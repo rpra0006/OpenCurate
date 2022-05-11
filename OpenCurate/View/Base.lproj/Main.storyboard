@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -194,14 +193,73 @@
                     <view key="view" contentMode="scaleToFill" id="51P-Kt-W3D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Oe-Vf-tKr">
+                                <rect key="frame" x="20" y="649" width="374" height="31"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Upload">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="uploadImage:" destination="UJf-lr-np6" eventType="touchUpInside" id="kXG-Rg-G37"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vlD-mf-18J">
+                                <rect key="frame" x="0.0" y="44" width="414" height="575"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-64-wbc">
+                                <rect key="frame" x="20" y="700" width="374" height="31"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                    <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveImage:" destination="UJf-lr-np6" eventType="touchUpInside" id="4pM-Te-CiP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="iec-CB-U1F"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Oe-Vf-tKr" firstAttribute="top" secondItem="vlD-mf-18J" secondAttribute="bottom" constant="30" id="9S2-cS-uVn"/>
+                            <constraint firstItem="bGb-64-wbc" firstAttribute="top" secondItem="6Oe-Vf-tKr" secondAttribute="bottom" constant="20" id="Dsc-I3-zMh"/>
+                            <constraint firstItem="vlD-mf-18J" firstAttribute="top" secondItem="iec-CB-U1F" secondAttribute="top" id="EsC-zS-r0M"/>
+                            <constraint firstItem="bGb-64-wbc" firstAttribute="leading" secondItem="iec-CB-U1F" secondAttribute="leading" constant="20" id="FO3-8K-p7s"/>
+                            <constraint firstItem="6Oe-Vf-tKr" firstAttribute="top" secondItem="vlD-mf-18J" secondAttribute="bottom" constant="30" id="O9u-nf-251"/>
+                            <constraint firstItem="vlD-mf-18J" firstAttribute="trailing" secondItem="iec-CB-U1F" secondAttribute="trailing" id="Qf6-nb-5AH"/>
+                            <constraint firstItem="iec-CB-U1F" firstAttribute="trailing" secondItem="bGb-64-wbc" secondAttribute="trailing" constant="20" id="SyW-sI-tQv"/>
+                            <constraint firstItem="iec-CB-U1F" firstAttribute="bottom" secondItem="bGb-64-wbc" secondAttribute="bottom" constant="33" id="T2q-41-hol"/>
+                            <constraint firstItem="vlD-mf-18J" firstAttribute="leading" secondItem="iec-CB-U1F" secondAttribute="leading" id="eqq-sw-NXL"/>
+                            <constraint firstItem="6Oe-Vf-tKr" firstAttribute="leading" secondItem="iec-CB-U1F" secondAttribute="leading" constant="20" id="vae-Nb-IcA"/>
+                            <constraint firstItem="iec-CB-U1F" firstAttribute="trailing" secondItem="6Oe-Vf-tKr" secondAttribute="trailing" constant="20" id="wpT-3e-3Uz"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="Nel-sg-Yh4"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="vlD-mf-18J" id="kJN-Re-Exb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAI-bT-Mlu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3551" y="-144"/>
+            <point key="canvasLocation" x="3550.7246376811595" y="-144.64285714285714"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="qYg-dI-tb6">
@@ -219,11 +277,18 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhx-8m-dXL">
                                 <rect key="frame" x="131" y="602" width="152" height="32"/>
-                                <color key="tintColor" name="AccentColor"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginAction:" destination="XCl-Il-d99" eventType="touchUpInside" id="k2G-9Y-ccw"/>
                                 </connections>
@@ -237,10 +302,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5X-Ja-HMB">
                                 <rect key="frame" x="131" y="642" width="152" height="32"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Register">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -757,9 +823,6 @@
         <image name="OpenCurateLogo" width="87" height="36.5"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <namedColor name="AccentColor">
-            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
