@@ -14,7 +14,7 @@ class UploadImage: NSObject, Codable {
     @DocumentID var id:String?
     var artistName: String?
     var imageTitle: String?
-    var storageRef: Int?
+    var storageLink: Int?
     var artistUID: String?
     
 }

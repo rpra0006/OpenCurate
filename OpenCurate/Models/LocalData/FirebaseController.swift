@@ -18,7 +18,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     var authController: Auth
     var database: Firestore
-    var storage: Storage
+    var storage: Storage // Firebase storage
     var artistRef: CollectionReference?
     var storageRef: StorageReference?
     var currentUser: FirebaseAuth.User?
@@ -26,10 +26,13 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     override init() {
         FirebaseApp.configure()
+        
         authController = Auth.auth()
         database = Firestore.firestore()
         storage = Storage.storage()
         uploadList = [UploadImage]()
+        artistRef = database.collection("artist")
+        storageRef = storage.reference()
         authStatus = false
         
         super.init()
@@ -60,7 +63,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     
     func setupStorageListener(){
-        
+        // To be added
         storageRef = storage.reference()
         
     }
@@ -128,7 +131,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     func addArtwork(uploadData: Data, uploadImage: UploadImage) {
         
-        storageRef = storage.reference()
+        //storageRef = storage.reference() // Need to set this up in setupStorageListener()
         
         let timestamp = UInt(Date().timeIntervalSince1970)
         let imageRef = storageRef?.child("images/\(timestamp)")
@@ -138,26 +141,27 @@ class FirebaseController: NSObject, DatabaseProtocol {
         
         let uploadTask = imageRef?.putData(uploadData, metadata: metadata)
         
-        /*
+        // Setup UploadImage object
+        uploadImage.storageLink = Int(timestamp)
+        uploadImage.artistUID = currentUser?.uid
+        
         uploadTask?.observe(.success) {
             // ADD IMAGES TO FIRESTORE DATABASE
+            snapshot in
+                do {
+                    if let artistRef = try self.artistRef?.addDocument(from: uploadImage) {
+                        uploadImage.id = artistRef.documentID
+                        print("Image uploaded to Firestore collection")
+                    }
+                } catch {
+                    print("Failed to serialize hero")
+                }
         }
-        */
         
-        /*
-        let image = Superhero()
-        hero.name = name
-        hero.abilities = abilities
-        hero.universe = universe.rawValue
-        
-        do {
-            if let heroesRef = try heroesRef?.addDocument(from: hero) {
-                hero.id = heroesRef.documentID
-            }
-        } catch {
-            print("Failed to serialize hero")
+        uploadTask?.observe(.failure) {
+            snapshot in
+                print("\(String(describing: snapshot.error))")
         }
-        */
     }
     
     func deleteArtwork() {
@@ -207,7 +211,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     func invokeAuthListener() {
         
-        //self.setupArtistListener()
+        //self.setupArtistListener() To instantiate uploadlist once user has logged in
         
         listeners.invoke { (listener) in
             if listener.listenerType == ListenerType.auth {
@@ -217,15 +221,18 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
     }
     
-    func signOut() {
+    func signOut(callback: @escaping (Result<Any, Error>) -> Void) {
         
-        do {
-            try authController.signOut()
-            currentUser = nil
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
+        Task {
+            do {
+                try authController.signOut()
+                currentUser = nil
+                callback(.success("Success"))
+            } catch {
+                print("Log out error: \(error.localizedDescription)")
+                callback(.failure(error))
+            }
         }
-        
     }
     
 }

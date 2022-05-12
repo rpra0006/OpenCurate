@@ -36,7 +36,7 @@ protocol DatabaseProtocol: AnyObject {
 
     func signIn(email: String, password: String, callback: @escaping (Result<Any, Error>) -> Void)
     func register(email: String, password: String, callback: @escaping (Result<Any, Error>) -> Void)
-    func signOut()
+    func signOut(callback: @escaping (Result<Any, Error>) -> Void)
 
 }
 
