@@ -14,12 +14,13 @@ import FirebaseAuth
 class FirebaseController: NSObject, DatabaseProtocol {
     
     var listeners = MulticastDelegate<DatabaseListener>()
-    //var localArtData = [ArtUpload]
+    var uploadList: [UploadImage]
     
     var authController: Auth
     var database: Firestore
-    var heroesRef: CollectionReference?
-    var teamsRef: CollectionReference?
+    var storage: Storage
+    var artistRef: CollectionReference?
+    var storageRef: StorageReference?
     var currentUser: FirebaseAuth.User?
     var authStatus: Bool
     
@@ -27,6 +28,8 @@ class FirebaseController: NSObject, DatabaseProtocol {
         FirebaseApp.configure()
         authController = Auth.auth()
         database = Firestore.firestore()
+        storage = Storage.storage()
+        uploadList = [UploadImage]()
         authStatus = false
         
         super.init()
@@ -37,14 +40,81 @@ class FirebaseController: NSObject, DatabaseProtocol {
         
     }
     
+    
+    func setupArtistListener(){
+        
+        artistRef = database.collection("artist")
+        
+        artistRef?.addSnapshotListener() {
+            (querySnapshot, error) in guard let querySnapshot = querySnapshot else {
+                print("Failed to fetch documents with error: \(String(describing: error))")
+                return
+            }
+            self.parseUploadSnapshot(snapshot: querySnapshot)
+
+        
+            //self.setupTeamListener()
+
+        }
+    }
+    
+    
+    func setupStorageListener(){
+        
+        storageRef = storage.reference()
+        
+    }
+    
+    
+    func parseUploadSnapshot(snapshot: QuerySnapshot){
+        
+        
+        snapshot.documentChanges.forEach{ (change) in
+            
+            var parsedUpload: UploadImage?
+            
+            do {
+                parsedUpload = try change.document.data(as: UploadImage.self)
+            } catch {
+                print("Unable to decode hero. Is the hero malformed?")
+                return
+            }
+            
+            guard let uploadImage = parsedUpload else {
+                print("Document doesn't exist")
+                return
+            }
+            
+            if change.type == .added {
+                
+                uploadList.insert(uploadImage, at: Int(change.newIndex))
+            }
+            else if change.type == .modified {
+                
+                uploadList[Int(change.oldIndex)] = uploadImage
+            }
+            else if change.type == .removed {
+                uploadList.remove(at: Int(change.oldIndex))
+            }
+            
+            listeners.invoke { (listener) in
+                if listener.listenerType == ListenerType.upload || listener.listenerType == ListenerType.all {
+                    
+                    listener.onUploadChange(change: .update, uploads: uploadList)
+                }
+            }
+            
+        }
+    }
+    
+    
+    
     func addListener(listener: DatabaseListener) {
         listeners.addDelegate(listener)
         
-        /*
-        if listener.listenerType == .upload {
-            listener.onUploadChange(change:. update, localArtData: localArtData)
+        if listener.listenerType == .upload || listener.listenerType == ListenerType.all {
+            listener.onUploadChange(change:. update, uploads: uploadList)
         }
-        */
         
         if listener.listenerType == .auth {
             listener.authSuccess(change: .update, status: authStatus)
@@ -54,6 +124,44 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     func removeListener(listener: DatabaseListener) {
         listeners.removeDelegate(listener)
+    }
+    
+    func addArtwork(uploadData: Data, uploadImage: UploadImage) {
+        
+        storageRef = storage.reference()
+        
+        let timestamp = UInt(Date().timeIntervalSince1970)
+        let imageRef = storageRef?.child("images/\(timestamp)")
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpg"
+        
+        let uploadTask = imageRef?.putData(uploadData, metadata: metadata)
+        
+        /*
+        uploadTask?.observe(.success) {
+            // ADD IMAGES TO FIRESTORE DATABASE
+        }
+        */
+        
+        /*
+        let image = Superhero()
+        hero.name = name
+        hero.abilities = abilities
+        hero.universe = universe.rawValue
+        
+        do {
+            if let heroesRef = try heroesRef?.addDocument(from: hero) {
+                hero.id = heroesRef.documentID
+            }
+        } catch {
+            print("Failed to serialize hero")
+        }
+        */
+    }
+    
+    func deleteArtwork() {
+        
     }
     
     
@@ -99,6 +207,8 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     func invokeAuthListener() {
         
+        //self.setupArtistListener()
+        
         listeners.invoke { (listener) in
             if listener.listenerType == ListenerType.auth {
                 
@@ -117,6 +227,5 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
         
     }
-    
     
 }

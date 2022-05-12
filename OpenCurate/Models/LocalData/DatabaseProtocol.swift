@@ -21,7 +21,7 @@ enum ListenerType {
 
 protocol DatabaseListener: AnyObject {
     var listenerType: ListenerType {get set}
-    //func onUploadChange(change: DatabaseChange, localArtData: [ArtUpload])
+    func onUploadChange(change: DatabaseChange, uploads: [UploadImage])
     func authSuccess(change: DatabaseChange, status: Bool)
 }
 
@@ -31,11 +31,12 @@ protocol DatabaseProtocol: AnyObject {
     func addListener(listener: DatabaseListener)
     func removeListener(listener: DatabaseListener)
     
-    //func addArtwork(name: String, abilities:String, universe: Universe) -> Superhero
-    //func deleteArtwork(hero: Superhero)
+    func addArtwork(uploadData: Data, uploadImage: UploadImage)
+    func deleteArtwork()
 
     func signIn(email: String, password: String, callback: @escaping (Result<Any, Error>) -> Void)
     func register(email: String, password: String, callback: @escaping (Result<Any, Error>) -> Void)
     func signOut()
+
 }
 

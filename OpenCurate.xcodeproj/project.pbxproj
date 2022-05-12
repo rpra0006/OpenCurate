@@ -16,11 +16,14 @@
 		B517BFE128124D1C00C1D96A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B517BFE028124D1C00C1D96A /* FirebaseFirestore */; };
 		B517BFE328124D1D00C1D96A /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = B517BFE228124D1D00C1D96A /* FirebaseFirestoreSwift-Beta */; };
 		B517BFE528124D1D00C1D96A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B517BFE428124D1D00C1D96A /* FirebaseStorage */; };
+		B51DF399282B8CB600A8FE91 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DF398282B8CB600A8FE91 /* AccountViewController.swift */; };
+		B51DF39B282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DF39A282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift */; };
 		B54BF1B9280FE2AD007F57C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BF1B8280FE2AD007F57C1 /* AppDelegate.swift */; };
 		B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BF1BA280FE2AD007F57C1 /* SceneDelegate.swift */; };
 		B54BF1C0280FE2AD007F57C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54BF1BE280FE2AD007F57C1 /* Main.storyboard */; };
 		B54BF1C2280FE2AF007F57C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54BF1C1280FE2AF007F57C1 /* Assets.xcassets */; };
 		B54BF1C5280FE2AF007F57C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54BF1C3280FE2AF007F57C1 /* LaunchScreen.storyboard */; };
+		B54CF0AC282C860D0050B103 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54CF0AB282C860D0050B103 /* UploadImage.swift */; };
 		B59B93EB281278FD0013ACAB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59B93EA281278FD0013ACAB /* UIView+Extension.swift */; };
 		B59B93EE28127D2F0013ACAB /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59B93ED28127D2F0013ACAB /* OnboardingCollectionViewCell.swift */; };
 		B5AB9B5B281D10B700FEEF36 /* DepartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB9B5A281D10B700FEEF36 /* DepartmentTableViewController.swift */; };
@@ -36,7 +39,7 @@
 		B5F1FC832812607600770B4F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC822812607600770B4F /* HomeViewController.swift */; };
 		B5F1FC882812619400770B4F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC872812619400770B4F /* OnboardingSlide.swift */; };
 		B5F1FC8F2812694900770B4F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F1FC8E2812694900770B4F /* OnboardingViewController.swift */; };
-		B5F446D628137D50006C66F2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F446D528137D50006C66F2 /* AccountViewController.swift */; };
+		B5F446D628137D50006C66F2 /* UploadImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F446D528137D50006C66F2 /* UploadImageViewController.swift */; };
 		B5F5E1BE281D3C2000A6F1E3 /* METArtData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5E1BD281D3C2000A6F1E3 /* METArtData.swift */; };
 		B5F5E1C0281D429500A6F1E3 /* ArtDepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5E1BF281D429500A6F1E3 /* ArtDepartmentViewController.swift */; };
 		B5F5E1C2281D562900A6F1E3 /* ArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5E1C1281D562900A6F1E3 /* ArtViewController.swift */; };
@@ -48,6 +51,8 @@
 		B5136FFF2818D91200023A1B /* DepartmentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentData.swift; sourceTree = "<group>"; };
 		B51370012818EEDC00023A1B /* METDepartmentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = METDepartmentData.swift; sourceTree = "<group>"; };
 		B517BFDB28124C8A00C1D96A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B51DF398282B8CB600A8FE91 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		B51DF39A282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B54BF1B5280FE2AD007F57C1 /* OpenCurate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCurate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54BF1B8280FE2AD007F57C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B54BF1BA280FE2AD007F57C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 		B54BF1C1280FE2AF007F57C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B54BF1C4280FE2AF007F57C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B54BF1C6280FE2AF007F57C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = OpenCurate/Application/Info.plist; sourceTree = SOURCE_ROOT; };
+		B54CF0AB282C860D0050B103 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
 		B59B93EA281278FD0013ACAB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B59B93ED28127D2F0013ACAB /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5AB9B5A281D10B700FEEF36 /* DepartmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +76,7 @@
 		B5F1FC822812607600770B4F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B5F1FC872812619400770B4F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		B5F1FC8E2812694900770B4F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		B5F446D528137D50006C66F2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		B5F446D528137D50006C66F2 /* UploadImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageViewController.swift; sourceTree = "<group>"; };
 		B5F5E1BD281D3C2000A6F1E3 /* METArtData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = METArtData.swift; sourceTree = "<group>"; };
 		B5F5E1BF281D429500A6F1E3 /* ArtDepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDepartmentViewController.swift; sourceTree = "<group>"; };
 		B5F5E1C1281D562900A6F1E3 /* ArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 				B5F0F1342828CF6A00F73F31 /* MulticastDelegate.swift */,
 				B5EF758F2823A4F800B06269 /* FirebaseController.swift */,
 				B5EF75912823A51B00B06269 /* DatabaseProtocol.swift */,
+				B54CF0AB282C860D0050B103 /* UploadImage.swift */,
 			);
 			path = LocalData;
 			sourceTree = "<group>";
@@ -250,8 +257,10 @@
 		B5F446D428137D33006C66F2 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				B5F446D528137D50006C66F2 /* AccountViewController.swift */,
+				B5F446D528137D50006C66F2 /* UploadImageViewController.swift */,
 				B5EF758A2823A06400B06269 /* AuthViewController.swift */,
+				B51DF398282B8CB600A8FE91 /* AccountViewController.swift */,
+				B51DF39A282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -347,8 +356,11 @@
 				B59B93EE28127D2F0013ACAB /* OnboardingCollectionViewCell.swift in Sources */,
 				B5F0F1392828D7E500F73F31 /* MapViewController.swift in Sources */,
 				B5F5E1BE281D3C2000A6F1E3 /* METArtData.swift in Sources */,
+				B51DF39B282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift in Sources */,
+				B54CF0AC282C860D0050B103 /* UploadImage.swift in Sources */,
 				B5EF758D2823A2EB00B06269 /* UIViewController+displayMessage.swift in Sources */,
 				B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */,
+				B51DF399282B8CB600A8FE91 /* AccountViewController.swift in Sources */,
 				B51370022818EEDC00023A1B /* METDepartmentData.swift in Sources */,
 				B5F0F1352828CF6A00F73F31 /* MulticastDelegate.swift in Sources */,
 				B5F0EBFB2820C76E00BD7FFC /* ArtImageCollectionViewCell.swift in Sources */,
@@ -357,7 +369,7 @@
 				B5136FFB2818C1B600023A1B /* DepartmentCollectionViewCell.swift in Sources */,
 				B5EF75902823A4F800B06269 /* FirebaseController.swift in Sources */,
 				B5EF75922823A51B00B06269 /* DatabaseProtocol.swift in Sources */,
-				B5F446D628137D50006C66F2 /* AccountViewController.swift in Sources */,
+				B5F446D628137D50006C66F2 /* UploadImageViewController.swift in Sources */,
 				B5F5E1C2281D562900A6F1E3 /* ArtViewController.swift in Sources */,
 				B5EF758B2823A06400B06269 /* AuthViewController.swift in Sources */,
 				B5AB9B5E281D140600FEEF36 /* DepartmentObjectData.swift in Sources */,

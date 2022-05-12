@@ -4,6 +4,8 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow permission to display art galleries near your location.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow access to upload photos</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
