@@ -16,6 +16,17 @@ class AuthViewController: UIViewController, DatabaseListener {
     weak var databaseController: DatabaseProtocol?
     var listenerType:ListenerType = .auth
     var authStatus: Bool?
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        databaseController = appDelegate?.databaseController
+        databaseController?.addListener(listener: self)
+    }
+    
     
     @IBAction func loginAction(_ sender: Any) {
         
@@ -56,15 +67,6 @@ class AuthViewController: UIViewController, DatabaseListener {
             }
         }
         return
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        databaseController = appDelegate?.databaseController
-        databaseController?.addListener(listener: self)
     }
     
 

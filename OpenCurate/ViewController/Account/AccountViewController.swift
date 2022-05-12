@@ -8,13 +8,36 @@
 import UIKit
 
 class AccountViewController: UIViewController {
-
+    
+    weak var databaseController: DatabaseProtocol?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        databaseController = appDelegate?.databaseController
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func logoutButton(_ sender: Any) {
+        
+        databaseController?.signOut(){
+            [weak self] result in
+                switch result {
+                    case .success(let p):
+                    DispatchQueue.main.async {
+                        self!.performSegue(withIdentifier: "logoutSegue", sender: sender)
+                        print("Sign out successful")
+                    }
+                    case .failure(let error):
+                    DispatchQueue.main.async {
+                        self!.displayMessage(title: "Error", message: "Unable to signout.")
+                    }
+                }
+        }
+    }
 
     /*
     // MARK: - Navigation
