@@ -9,6 +9,5 @@ import UIKit
 
 class UploadImageCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var uploadedImage: UIView!
-    
+    @IBOutlet weak var uploadedImage: UIImageView!
 }

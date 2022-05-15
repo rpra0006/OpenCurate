@@ -7,9 +7,15 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class AccountViewController: UIViewController, DatabaseListener {
+    
+    
+    var listenerType: ListenerType = ListenerType.user
     
     weak var databaseController: DatabaseProtocol?
+    
+    @IBOutlet weak var userUploadCollectionView: UICollectionView!
+    var userImages : [UIImage] = []
     
     
     override func viewDidLoad() {
@@ -17,7 +23,22 @@ class AccountViewController: UIViewController {
         
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
+        userUploadCollectionView.delegate = self
+        userUploadCollectionView.dataSource = self
+        
+        loadCollectionView()
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        databaseController?.addListener(listener: self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        databaseController?.removeListener(listener: self)
     }
     
     
@@ -38,6 +59,30 @@ class AccountViewController: UIViewController {
                 }
         }
     }
+    
+    
+    func loadCollectionView() {
+        databaseController?.fetchUserUploads{ result in
+            self.userImages = result
+            self.userUploadCollectionView.reloadData()
+            print(self.userImages.count)
+        }
+    }
+    
+    func onUserUploadChange(change: DatabaseChange, userUpload: [UIImage]) {
+        userImages = userUpload
+        userUploadCollectionView.reloadData()
+    }
+    
+    
+    func onUploadChange(change: DatabaseChange, uploads: [UploadImage]) {
+        
+    }
+    
+    func authSuccess(change: DatabaseChange, status: Bool) {
+        
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -49,4 +94,25 @@ class AccountViewController: UIViewController {
     }
     */
 
+}
+
+
+extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return userImages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "uploadImageCell", for: indexPath) as! UploadImageCollectionViewCell
+        
+        cell.uploadedImage.image = userImages[indexPath.row]
+        return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum DatabaseChange{
     case add
@@ -16,12 +17,14 @@ enum DatabaseChange{
 enum ListenerType {
     case auth
     case upload
+    case user
     case all
 }
 
 protocol DatabaseListener: AnyObject {
     var listenerType: ListenerType {get set}
     func onUploadChange(change: DatabaseChange, uploads: [UploadImage])
+    func onUserUploadChange(change: DatabaseChange, userUpload: [UIImage])
     func authSuccess(change: DatabaseChange, status: Bool)
 }
 
@@ -37,6 +40,8 @@ protocol DatabaseProtocol: AnyObject {
     func signIn(email: String, password: String, callback: @escaping (Result<Any, Error>) -> Void)
     func register(email: String, password: String, callback: @escaping (Result<Any, Error>) -> Void)
     func signOut(callback: @escaping (Result<Any, Error>) -> Void)
+    
+    func fetchUserUploads(_ completion: @escaping ([UIImage]) -> Void)
 
 }
 

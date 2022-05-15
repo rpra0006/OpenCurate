@@ -9,6 +9,7 @@ import UIKit
 
 class AuthViewController: UIViewController, DatabaseListener {
     
+    
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -103,6 +104,10 @@ class AuthViewController: UIViewController, DatabaseListener {
     }
     
     func onUploadChange(change: DatabaseChange, uploads: [UploadImage]) {
+        
+    }
+    
+    func onUserUploadChange(change: DatabaseChange, userUpload: [UIImage]) {
         
     }
     

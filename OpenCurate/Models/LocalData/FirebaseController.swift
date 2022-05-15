@@ -10,11 +10,15 @@ import Firebase
 import FirebaseFirestoreSwift
 import FirebaseFirestore
 import FirebaseAuth
+import UIKit
 
 class FirebaseController: NSObject, DatabaseProtocol {
     
+    
+    
     var listeners = MulticastDelegate<DatabaseListener>()
     var uploadList: [UploadImage]
+    var userUpload: [UIImage]
     
     var authController: Auth
     var database: Firestore
@@ -30,7 +34,9 @@ class FirebaseController: NSObject, DatabaseProtocol {
         authController = Auth.auth()
         database = Firestore.firestore()
         storage = Storage.storage()
+        storageRef = storage.reference()
         uploadList = [UploadImage]()
+        userUpload = [UIImage]()
         artistRef = database.collection("artist")
         storageRef = storage.reference()
         authStatus = false
@@ -55,22 +61,12 @@ class FirebaseController: NSObject, DatabaseProtocol {
             }
             self.parseUploadSnapshot(snapshot: querySnapshot)
 
-        
-            //self.setupTeamListener()
-
         }
-    }
-    
-    
-    func setupStorageListener(){
-        // To be added
-        storageRef = storage.reference()
         
     }
     
     
     func parseUploadSnapshot(snapshot: QuerySnapshot){
-        
         
         snapshot.documentChanges.forEach{ (change) in
             
@@ -79,7 +75,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
             do {
                 parsedUpload = try change.document.data(as: UploadImage.self)
             } catch {
-                print("Unable to decode hero. Is the hero malformed?")
+                print("Unable to decode upload.")
                 return
             }
             
@@ -110,6 +106,41 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
     }
     
+    func fetchUserUploads(_ completion: @escaping ([UIImage]) -> Void) {
+        
+        self.userUpload.removeAll()
+        let group = DispatchGroup()
+        
+        artistRef?.whereField("artistUID", isEqualTo: currentUser!.uid).getDocuments{
+            (snapshot, error) in
+            if let err = error {
+                print("Error fetching documents: \(err)")
+            }
+            
+            guard let snapshot = snapshot else {
+                return
+            }
+            
+            for document in snapshot.documents {
+                group.enter()
+                let storageURL = document.data()["storageLink"]
+                let imgRef = self.storageRef!.child("images/\(storageURL!)")
+                imgRef.getData(maxSize: 1024 * 1024 * 1024) { data, error in
+                    if let error = error {
+                        print("Error fetching: \(error)")
+                    }
+                    self.userUpload.append(UIImage(data: data!)!)
+                    print("Found image: \(String(describing: data))")
+                    group.leave()
+                }
+            }
+            
+            group.notify(queue: .main){
+                completion(self.userUpload)
+            }
+        }
+        
+    }
     
     
     func addListener(listener: DatabaseListener) {
@@ -117,6 +148,11 @@ class FirebaseController: NSObject, DatabaseProtocol {
         
         if listener.listenerType == .upload || listener.listenerType == ListenerType.all {
             listener.onUploadChange(change:. update, uploads: uploadList)
+        }
+        
+        if listener.listenerType == ListenerType.user || listener.listenerType == ListenerType.all {
+            
+            listener.onUserUploadChange(change: .update, userUpload: userUpload)
         }
         
         if listener.listenerType == .auth {
@@ -130,8 +166,6 @@ class FirebaseController: NSObject, DatabaseProtocol {
     }
     
     func addArtwork(uploadData: Data, uploadImage: UploadImage) {
-        
-        //storageRef = storage.reference() // Need to set this up in setupStorageListener()
         
         let timestamp = UInt(Date().timeIntervalSince1970)
         let imageRef = storageRef?.child("images/\(timestamp)")
@@ -152,9 +186,17 @@ class FirebaseController: NSObject, DatabaseProtocol {
                     if let artistRef = try self.artistRef?.addDocument(from: uploadImage) {
                         uploadImage.id = artistRef.documentID
                         print("Image uploaded to Firestore collection")
+                        self.userUpload.append(UIImage(data: uploadData)!)
+                       
+                        self.listeners.invoke { (listener) in
+                            if listener.listenerType == ListenerType.user || listener.listenerType == ListenerType.all {
+                                
+                                listener.onUserUploadChange(change: .update, userUpload: self.userUpload)
+                            }
+                        }
                     }
                 } catch {
-                    print("Failed to serialize hero")
+                    print("Failed to serialize image")
                 }
         }
         
@@ -165,6 +207,21 @@ class FirebaseController: NSObject, DatabaseProtocol {
     }
     
     func deleteArtwork() {
+        
+    }
+    
+    
+    func saveImageData(filename: String, imageData:Data) {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        let fileURL = documentsDirectory.appendingPathComponent(filename)
+        
+        do {
+            try imageData.write(to: fileURL)
+        }
+        catch {
+            print("Error writing file: \(error.localizedDescription)")
+        }
         
     }
     
