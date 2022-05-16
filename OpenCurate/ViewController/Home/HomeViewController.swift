@@ -11,6 +11,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var logoButton: UIBarButtonItem!
     @IBOutlet weak var departmentCollectionView: UICollectionView!
+    @IBOutlet weak var uploadCollectionView: UICollectionView!
+    
     
     let DEPARTMENT_REQUEST = "https://collectionapi.metmuseum.org/public/collection/v1/departments"
     
