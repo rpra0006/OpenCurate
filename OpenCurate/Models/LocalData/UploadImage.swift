@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestoreSwift
+import UIKit
 
 
 class UploadImage: NSObject, Codable {
@@ -16,5 +17,6 @@ class UploadImage: NSObject, Codable {
     var imageTitle: String?
     var storageLink: Int?
     var artistUID: String?
+    var image: Data?
     
 }

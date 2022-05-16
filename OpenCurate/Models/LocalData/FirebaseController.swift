@@ -68,8 +68,10 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     func parseUploadSnapshot(snapshot: QuerySnapshot){
         
+        let group = DispatchGroup()
+        
         snapshot.documentChanges.forEach{ (change) in
-            
+            group.enter()
             var parsedUpload: UploadImage?
             
             do {
@@ -84,6 +86,16 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 return
             }
             
+            let imgLink = uploadImage.storageLink
+            let imgRef = self.storageRef!.child("images/\(imgLink!)")
+            imgRef.getData(maxSize: 1024 * 1024 * 1024) { data, error in
+                if let error = error {
+                    print("Error fetching: \(error)")
+                }
+                uploadImage.image = data
+                group.leave()
+            }
+            
             if change.type == .added {
                 
                 uploadList.insert(uploadImage, at: Int(change.newIndex))
@@ -96,14 +108,18 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 uploadList.remove(at: Int(change.oldIndex))
             }
             
-            listeners.invoke { (listener) in
+        }
+        
+        group.notify(queue: .main){
+            
+            self.listeners.invoke { (listener) in
                 if listener.listenerType == ListenerType.upload || listener.listenerType == ListenerType.all {
                     
-                    listener.onUploadChange(change: .update, uploads: uploadList)
+                    listener.onUploadChange(change: .update, uploads: self.uploadList)
                 }
             }
-            
         }
+        
     }
     
     func fetchUserUploads(_ completion: @escaping ([UIImage]) -> Void) {
@@ -211,21 +227,6 @@ class FirebaseController: NSObject, DatabaseProtocol {
     }
     
     
-    func saveImageData(filename: String, imageData:Data) {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        let fileURL = documentsDirectory.appendingPathComponent(filename)
-        
-        do {
-            try imageData.write(to: fileURL)
-        }
-        catch {
-            print("Error writing file: \(error.localizedDescription)")
-        }
-        
-    }
-    
-    
     func signIn(email: String, password: String, callback: @escaping (Result<Any, Error>) -> Void) {
         
         Task {
@@ -268,7 +269,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     func invokeAuthListener() {
         
-        //self.setupArtistListener() To instantiate uploadlist once user has logged in
+        self.setupArtistListener()
         
         listeners.invoke { (listener) in
             if listener.listenerType == ListenerType.auth {

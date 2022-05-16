@@ -11,6 +11,8 @@
 		B5136FFC2818C1B600023A1B /* DepartmentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5136FFA2818C1B600023A1B /* DepartmentCollectionViewCell.xib */; };
 		B51370002818D91200023A1B /* DepartmentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5136FFF2818D91200023A1B /* DepartmentData.swift */; };
 		B51370022818EEDC00023A1B /* METDepartmentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51370012818EEDC00023A1B /* METDepartmentData.swift */; };
+		B5164981283228B00072515B /* UploadHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B516497F283228B00072515B /* UploadHomeCollectionViewCell.swift */; };
+		B5164982283228B00072515B /* UploadHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5164980283228B00072515B /* UploadHomeCollectionViewCell.xib */; };
 		B517BFDC28124C8A00C1D96A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B517BFDB28124C8A00C1D96A /* GoogleService-Info.plist */; };
 		B517BFDF28124D1C00C1D96A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B517BFDE28124D1C00C1D96A /* FirebaseAuth */; };
 		B517BFE128124D1C00C1D96A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B517BFE028124D1C00C1D96A /* FirebaseFirestore */; };
@@ -50,6 +52,8 @@
 		B5136FFA2818C1B600023A1B /* DepartmentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentCollectionViewCell.xib; sourceTree = "<group>"; };
 		B5136FFF2818D91200023A1B /* DepartmentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentData.swift; sourceTree = "<group>"; };
 		B51370012818EEDC00023A1B /* METDepartmentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = METDepartmentData.swift; sourceTree = "<group>"; };
+		B516497F283228B00072515B /* UploadHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5164980283228B00072515B /* UploadHomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadHomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		B517BFDB28124C8A00C1D96A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B51DF398282B8CB600A8FE91 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		B51DF39A282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 			children = (
 				B5136FF92818C1B600023A1B /* DepartmentCollectionViewCell.swift */,
 				B5136FFA2818C1B600023A1B /* DepartmentCollectionViewCell.xib */,
+				B516497F283228B00072515B /* UploadHomeCollectionViewCell.swift */,
+				B5164980283228B00072515B /* UploadHomeCollectionViewCell.xib */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				B54BF1C5280FE2AF007F57C1 /* LaunchScreen.storyboard in Resources */,
 				B517BFDC28124C8A00C1D96A /* GoogleService-Info.plist in Resources */,
 				B5136FFC2818C1B600023A1B /* DepartmentCollectionViewCell.xib in Resources */,
+				B5164982283228B00072515B /* UploadHomeCollectionViewCell.xib in Resources */,
 				B54BF1C2280FE2AF007F57C1 /* Assets.xcassets in Resources */,
 				B54BF1C0280FE2AD007F57C1 /* Main.storyboard in Resources */,
 			);
@@ -364,6 +371,7 @@
 				B51370022818EEDC00023A1B /* METDepartmentData.swift in Sources */,
 				B5F0F1352828CF6A00F73F31 /* MulticastDelegate.swift in Sources */,
 				B5F0EBFB2820C76E00BD7FFC /* ArtImageCollectionViewCell.swift in Sources */,
+				B5164981283228B00072515B /* UploadHomeCollectionViewCell.swift in Sources */,
 				B5F1FC832812607600770B4F /* HomeViewController.swift in Sources */,
 				B5F1FC882812619400770B4F /* OnboardingSlide.swift in Sources */,
 				B5136FFB2818C1B600023A1B /* DepartmentCollectionViewCell.swift in Sources */,

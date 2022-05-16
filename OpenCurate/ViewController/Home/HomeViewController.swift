@@ -7,12 +7,16 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, DatabaseListener {
+    
+    var listenerType: ListenerType = .upload
+    weak var databaseController: DatabaseProtocol?
+    
+    var uploadHomeList = [UploadImage]()
     
     @IBOutlet weak var logoButton: UIBarButtonItem!
     @IBOutlet weak var departmentCollectionView: UICollectionView!
     @IBOutlet weak var uploadCollectionView: UICollectionView!
-    
     
     let DEPARTMENT_REQUEST = "https://collectionapi.metmuseum.org/public/collection/v1/departments"
     
@@ -22,11 +26,15 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        databaseController = appDelegate?.databaseController
         
         logoButton.image = UIImage(named: "OpenCurateLogo")?.withRenderingMode(.alwaysOriginal)
         
         departmentCollectionView.delegate = self
         departmentCollectionView.dataSource = self
+        uploadCollectionView.delegate = self
+        uploadCollectionView.dataSource = self
         registerCells()
         
         Task {
@@ -66,6 +74,35 @@ class HomeViewController: UIViewController {
     
     private func registerCells(){
         departmentCollectionView.register(UINib(nibName: DepartmentCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DepartmentCollectionViewCell.identifier)
+        uploadCollectionView.register(UINib(nibName: UploadHomeCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: UploadHomeCollectionViewCell.identifier)
+    }
+    
+    func onUploadChange(change: DatabaseChange, uploads: [UploadImage]) {
+        
+        uploadHomeList = Array(uploads.prefix(5)) // Get array slice of first 5 object
+        
+        // Create an Image for "View More" and append to end of uploadHomeList
+        
+        uploadCollectionView.reloadData()
+        
+    }
+    
+    func onUserUploadChange(change: DatabaseChange, userUpload: [UIImage]) {
+        
+    }
+    
+    func authSuccess(change: DatabaseChange, status: Bool) {
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        databaseController?.addListener(listener: self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        databaseController?.removeListener(listener: self)
     }
     
     
@@ -89,14 +126,31 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return newDepartments.count
+        
+        switch collectionView {
+            case departmentCollectionView:
+                return newDepartments.count
+            case uploadCollectionView:
+                return uploadHomeList.count
+            default:
+                return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DepartmentCollectionViewCell.identifier, for: indexPath) as! DepartmentCollectionViewCell
-        cell.setup(newDepartments[indexPath.row])
-        return cell
+        switch collectionView {
+            case departmentCollectionView:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DepartmentCollectionViewCell.identifier, for: indexPath) as! DepartmentCollectionViewCell
+                cell.setup(newDepartments[indexPath.row])
+                return cell
+            case uploadCollectionView:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UploadHomeCollectionViewCell.identifier, for: indexPath) as! UploadHomeCollectionViewCell
+                cell.setup(uploadHomeList[indexPath.row])
+                return cell
+            default:
+                return UICollectionViewCell()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

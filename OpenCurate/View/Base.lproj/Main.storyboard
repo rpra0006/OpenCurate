@@ -69,35 +69,43 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeH-bg-NKM">
                                                 <rect key="frame" x="0.0" y="255" width="414" height="348"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OpenCurate Member Uploads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwG-FG-Ygm">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OpenCurate Member Uploads " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwG-FG-Ygm">
                                                         <rect key="frame" x="16" y="16" width="382" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dwe-5F-9E2">
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dwe-5F-9E2">
                                                         <rect key="frame" x="0.0" y="48" width="414" height="300"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="300" id="LUh-Ex-QgS"/>
                                                         </constraints>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KKs-bv-pmP">
-                                                            <size key="itemSize" width="128" height="128"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="2" id="KKs-bv-pmP">
+                                                            <size key="itemSize" width="175" height="279"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dc4-l4-rS8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                <rect key="frame" x="0.0" y="10.5" width="175" height="279"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uXs-QB-vzF">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="279"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </collectionViewCellContentView>
+                                                                <size key="customSize" width="175" height="279"/>
                                                             </collectionViewCell>
                                                         </cells>
                                                     </collectionView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVK-f7-86C">
+                                                        <rect key="frame" x="311" y="13" width="65" height="31"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" image="arrow.right" catalog="system">
+                                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -107,7 +115,11 @@
                                                     <constraint firstItem="nwG-FG-Ygm" firstAttribute="top" secondItem="zeH-bg-NKM" secondAttribute="top" constant="16" id="bnS-ql-eGK"/>
                                                     <constraint firstItem="dwe-5F-9E2" firstAttribute="leading" secondItem="zeH-bg-NKM" secondAttribute="leading" id="c94-30-M20"/>
                                                     <constraint firstAttribute="trailing" secondItem="dwe-5F-9E2" secondAttribute="trailing" id="fBG-nV-8QW"/>
+                                                    <constraint firstItem="NVK-f7-86C" firstAttribute="leading" secondItem="zeH-bg-NKM" secondAttribute="leading" constant="311" id="fdX-Dc-iUN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NVK-f7-86C" secondAttribute="trailing" constant="38" id="ndT-i1-FmQ"/>
+                                                    <constraint firstItem="NVK-f7-86C" firstAttribute="top" secondItem="zeH-bg-NKM" secondAttribute="top" constant="13" id="r4X-qS-UQy"/>
                                                     <constraint firstItem="nwG-FG-Ygm" firstAttribute="leading" secondItem="zeH-bg-NKM" secondAttribute="leading" constant="16" id="tIL-x3-f0k"/>
+                                                    <constraint firstItem="dwe-5F-9E2" firstAttribute="top" secondItem="NVK-f7-86C" secondAttribute="bottom" constant="4" id="tfR-Yg-07z"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqK-iZ-vbe">
@@ -178,7 +190,7 @@
                     <connections>
                         <outlet property="departmentCollectionView" destination="GpU-hr-m5l" id="Efh-27-eCe"/>
                         <outlet property="logoButton" destination="D24-hl-RIn" id="RHS-5Y-qSb"/>
-                        <outlet property="uploadCollectionView" destination="dwe-5F-9E2" id="jPX-Ll-rhP"/>
+                        <outlet property="uploadCollectionView" destination="dwe-5F-9E2" id="XpF-gs-ufI"/>
                         <segue destination="0de-LQ-pZE" kind="show" identifier="departmentTableSegue" id="bba-4T-vCC"/>
                     </connections>
                 </viewController>
@@ -921,6 +933,7 @@
     <resources>
         <image name="GalleryMap" width="734" height="563"/>
         <image name="OpenCurateLogo" width="87" height="36.5"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="linkColor">
