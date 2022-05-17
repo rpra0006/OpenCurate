@@ -20,6 +20,7 @@
 		B517BFE528124D1D00C1D96A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B517BFE428124D1D00C1D96A /* FirebaseStorage */; };
 		B51DF399282B8CB600A8FE91 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DF398282B8CB600A8FE91 /* AccountViewController.swift */; };
 		B51DF39B282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DF39A282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift */; };
+		B5320B23283456A2007FB515 /* UploadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5320B22283456A2007FB515 /* UploadTableViewController.swift */; };
 		B54BF1B9280FE2AD007F57C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BF1B8280FE2AD007F57C1 /* AppDelegate.swift */; };
 		B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BF1BA280FE2AD007F57C1 /* SceneDelegate.swift */; };
 		B54BF1C0280FE2AD007F57C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54BF1BE280FE2AD007F57C1 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		B517BFDB28124C8A00C1D96A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B51DF398282B8CB600A8FE91 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		B51DF39A282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5320B22283456A2007FB515 /* UploadTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTableViewController.swift; sourceTree = "<group>"; };
 		B54BF1B5280FE2AD007F57C1 /* OpenCurate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCurate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54BF1B8280FE2AD007F57C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B54BF1BA280FE2AD007F57C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				B5EF758A2823A06400B06269 /* AuthViewController.swift */,
 				B51DF398282B8CB600A8FE91 /* AccountViewController.swift */,
 				B51DF39A282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift */,
+				B5320B22283456A2007FB515 /* UploadTableViewController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				B5F0F1352828CF6A00F73F31 /* MulticastDelegate.swift in Sources */,
 				B5F0EBFB2820C76E00BD7FFC /* ArtImageCollectionViewCell.swift in Sources */,
 				B5164981283228B00072515B /* UploadHomeCollectionViewCell.swift in Sources */,
+				B5320B23283456A2007FB515 /* UploadTableViewController.swift in Sources */,
 				B5F1FC832812607600770B4F /* HomeViewController.swift in Sources */,
 				B5F1FC882812619400770B4F /* OnboardingSlide.swift in Sources */,
 				B5136FFB2818C1B600023A1B /* DepartmentCollectionViewCell.swift in Sources */,

@@ -105,6 +105,9 @@
                                                         <buttonConfiguration key="configuration" style="filled" image="arrow.right" catalog="system">
                                                             <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <segue destination="Dtx-xK-wTA" kind="show" id="R0b-gZ-DpX"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -698,6 +701,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13S-VS-TLc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6044.9275362318849" y="-1125"/>
+        </scene>
+        <!--OpenCurate Collection-->
+        <scene sceneID="oUR-0r-n6I">
+            <objects>
+                <tableViewController id="Dtx-xK-wTA" customClass="UploadTableViewController" customModule="OpenCurate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="let-hP-ZeP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="uploadIdCell" textLabel="J4p-1w-CVU" style="IBUITableViewCellStyleDefault" id="GBO-bm-tJk">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GBO-bm-tJk" id="5P9-fZ-SaF">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J4p-1w-CVU">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Dtx-xK-wTA" id="6xy-ov-sf9"/>
+                            <outlet property="delegate" destination="Dtx-xK-wTA" id="WGu-cK-05x"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="OpenCurate Collection" id="9eY-Fh-qkt"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8OS-Vn-PyI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6045" y="-297"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="6eB-5I-5mT">
