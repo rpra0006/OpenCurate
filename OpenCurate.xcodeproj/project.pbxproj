@@ -21,6 +21,7 @@
 		B51DF399282B8CB600A8FE91 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DF398282B8CB600A8FE91 /* AccountViewController.swift */; };
 		B51DF39B282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DF39A282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift */; };
 		B5320B23283456A2007FB515 /* UploadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5320B22283456A2007FB515 /* UploadTableViewController.swift */; };
+		B5320B25283465D3007FB515 /* UploadSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5320B24283465D3007FB515 /* UploadSelectViewController.swift */; };
 		B54BF1B9280FE2AD007F57C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BF1B8280FE2AD007F57C1 /* AppDelegate.swift */; };
 		B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BF1BA280FE2AD007F57C1 /* SceneDelegate.swift */; };
 		B54BF1C0280FE2AD007F57C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54BF1BE280FE2AD007F57C1 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		B51DF398282B8CB600A8FE91 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		B51DF39A282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5320B22283456A2007FB515 /* UploadTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTableViewController.swift; sourceTree = "<group>"; };
+		B5320B24283465D3007FB515 /* UploadSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSelectViewController.swift; sourceTree = "<group>"; };
 		B54BF1B5280FE2AD007F57C1 /* OpenCurate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCurate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54BF1B8280FE2AD007F57C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B54BF1BA280FE2AD007F57C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				B51DF398282B8CB600A8FE91 /* AccountViewController.swift */,
 				B51DF39A282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift */,
 				B5320B22283456A2007FB515 /* UploadTableViewController.swift */,
+				B5320B24283465D3007FB515 /* UploadSelectViewController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				B51DF39B282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift in Sources */,
 				B54CF0AC282C860D0050B103 /* UploadImage.swift in Sources */,
 				B5EF758D2823A2EB00B06269 /* UIViewController+displayMessage.swift in Sources */,
+				B5320B25283465D3007FB515 /* UploadSelectViewController.swift in Sources */,
 				B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */,
 				B51DF399282B8CB600A8FE91 /* AccountViewController.swift in Sources */,
 				B51370022818EEDC00023A1B /* METDepartmentData.swift in Sources */,

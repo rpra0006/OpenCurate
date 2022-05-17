@@ -13,6 +13,7 @@ class HomeViewController: UIViewController, DatabaseListener {
     weak var databaseController: DatabaseProtocol?
     
     var uploadHomeList = [UploadImage]()
+    var selectedUpload: UploadImage?
     
     @IBOutlet weak var logoButton: UIBarButtonItem!
     @IBOutlet weak var departmentCollectionView: UICollectionView!
@@ -117,6 +118,10 @@ class HomeViewController: UIViewController, DatabaseListener {
             destination.navigationItem.title = selectedDepartment?.departmentName
             destination.departmentId = selectedDepartment?.departmentId
         }
+        if segue.identifier == "homeUploadSegue" {
+            let destination = segue.destination as! UploadSelectViewController
+            destination.uploadImage = selectedUpload
+        }
     }
 
 
@@ -154,8 +159,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedDepartment = newDepartments[indexPath.row]
-        performSegue(withIdentifier: "departmentTableSegue", sender: nil)
+        
+        switch collectionView {
+            case departmentCollectionView:
+                selectedDepartment = newDepartments[indexPath.row]
+                performSegue(withIdentifier: "departmentTableSegue", sender: nil)
+            case uploadCollectionView:
+                selectedUpload = uploadHomeList[indexPath.row]
+                performSegue(withIdentifier: "homeUploadSegue", sender: nil)
+            default:
+                return
+        }
     }
 }
 

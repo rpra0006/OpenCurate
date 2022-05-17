@@ -12,6 +12,7 @@ class UploadTableViewController: UITableViewController, DatabaseListener {
     var listenerType: ListenerType = .upload
     let CELL_UPLOAD = "uploadIdCell"
     var uploadList = [UploadImage]()
+    var selectedUpload: UploadImage?
     weak var databaseController: DatabaseProtocol?
     
     override func viewDidLoad() {
@@ -50,6 +51,15 @@ class UploadTableViewController: UITableViewController, DatabaseListener {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        selectedUpload = uploadList[indexPath.row]
+        
+        performSegue(withIdentifier: "uploadSelectSegue", sender: self)
+    }
+    
 
     func onUploadChange(change: DatabaseChange, uploads: [UploadImage]) {
         uploadList = uploads
@@ -75,14 +85,19 @@ class UploadTableViewController: UITableViewController, DatabaseListener {
         databaseController?.removeListener(listener: self)
     }
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "uploadSelectSegue" {
+            if let destination = segue.destination as? UploadSelectViewController {
+                destination.uploadImage = selectedUpload
+            }
+        }
     }
-    */
+    
 
 }

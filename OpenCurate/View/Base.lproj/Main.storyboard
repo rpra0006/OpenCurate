@@ -195,6 +195,7 @@
                         <outlet property="logoButton" destination="D24-hl-RIn" id="RHS-5Y-qSb"/>
                         <outlet property="uploadCollectionView" destination="dwe-5F-9E2" id="XpF-gs-ufI"/>
                         <segue destination="0de-LQ-pZE" kind="show" identifier="departmentTableSegue" id="bba-4T-vCC"/>
+                        <segue destination="q40-ZS-SHi" kind="show" identifier="homeUploadSegue" id="Ghj-K0-whk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Y0-tT-dPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -735,10 +736,53 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="OpenCurate Collection" id="9eY-Fh-qkt"/>
+                    <connections>
+                        <segue destination="q40-ZS-SHi" kind="show" identifier="uploadSelectSegue" id="TdI-za-Opv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8OS-Vn-PyI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6045" y="-297"/>
+        </scene>
+        <!--Upload Select View Controller-->
+        <scene sceneID="ITp-nE-Tev">
+            <objects>
+                <viewController id="q40-ZS-SHi" customClass="UploadSelectViewController" customModule="OpenCurate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eiU-Kc-Lp5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxz-ZJ-Zrb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="580"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXh-sd-bjj">
+                                <rect key="frame" x="186" y="713" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zje-zT-Cfe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tXh-sd-bjj" firstAttribute="top" secondItem="lxz-ZJ-Zrb" secondAttribute="bottom" constant="45" id="2Hd-2c-R6v"/>
+                            <constraint firstItem="zje-zT-Cfe" firstAttribute="bottom" secondItem="tXh-sd-bjj" secondAttribute="bottom" constant="79" id="7oy-hq-99e"/>
+                            <constraint firstItem="lxz-ZJ-Zrb" firstAttribute="trailing" secondItem="zje-zT-Cfe" secondAttribute="trailing" id="9iB-l9-YIQ"/>
+                            <constraint firstItem="lxz-ZJ-Zrb" firstAttribute="top" secondItem="zje-zT-Cfe" secondAttribute="top" id="G2Q-Tf-eSj"/>
+                            <constraint firstItem="zje-zT-Cfe" firstAttribute="trailing" secondItem="tXh-sd-bjj" secondAttribute="trailing" constant="186" id="Jcw-KL-vxb"/>
+                            <constraint firstItem="tXh-sd-bjj" firstAttribute="leading" secondItem="zje-zT-Cfe" secondAttribute="leading" constant="186" id="LNT-X6-YQD"/>
+                            <constraint firstItem="lxz-ZJ-Zrb" firstAttribute="leading" secondItem="zje-zT-Cfe" secondAttribute="leading" id="iPK-i5-bgU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Aol-J5-tRR"/>
+                    <connections>
+                        <outlet property="imageTitleLabel" destination="tXh-sd-bjj" id="bqa-lK-HWl"/>
+                        <outlet property="uploadImageView" destination="lxz-ZJ-Zrb" id="0F3-1Z-nF7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIS-C9-jef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7160.8695652173919" y="-297.32142857142856"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="6eB-5I-5mT">
@@ -969,6 +1013,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Ghj-K0-whk"/>
         <segue reference="Pgb-b0-k3f"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
