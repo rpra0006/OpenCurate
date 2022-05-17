@@ -625,6 +625,7 @@
                                                     <gestureRecognizers/>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="9T2-pD-EzY" firstAttribute="leading" secondItem="hSR-Cy-XYk" secondAttribute="leading" id="7QS-8b-043"/>
                                                 <constraint firstAttribute="bottom" secondItem="9T2-pD-EzY" secondAttribute="bottom" id="JT6-kl-HzP"/>
@@ -852,10 +853,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IRW-hz-5lD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="708"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="615"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5H-5C-LTw">
-                                <rect key="frame" x="10" y="772" width="394" height="31"/>
+                                <rect key="frame" x="10" y="723" width="394" height="31"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="D5H-5C-LTw" secondAttribute="height" multiplier="394:31" id="F19-ff-pwP"/>
