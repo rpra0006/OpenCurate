@@ -13,13 +13,18 @@ class UploadSelectViewController: UIViewController {
     
     @IBOutlet weak var uploadImageView: UIImageView!
     @IBOutlet weak var imageTitleLabel: UILabel!
+    @IBOutlet weak var artistUsernameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         uploadImageView.image = UIImage(data: (uploadImage?.image)!)
+        uploadImageView.enableZoom()
+        
         imageTitleLabel.text = String((uploadImage?.storageLink)!)
-    
+        
+        let username = uploadImage?.artistName ?? "N/A"
+        artistUsernameLabel.text = username
         // Do any additional setup after loading the view.
     }
     
