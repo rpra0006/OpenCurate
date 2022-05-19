@@ -216,30 +216,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zpg-E9-lxw">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zpg-E9-lxw">
                                 <rect key="frame" x="0.0" y="117" width="414" height="571.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KNS-WA-Dwp">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="0.0" id="KNS-WA-Dwp">
+                                    <size key="itemSize" width="207" height="207"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="uploadImageCell" id="yLu-ND-cqJ" customClass="UploadImageCollectionViewCell" customModule="OpenCurate" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="h2d-Nv-zlT">
+                                            <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mxz-ci-6P2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mxz-ci-6P2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
                                                 </imageView>
                                             </subviews>
-                                        </view>
-                                        <size key="customSize" width="128" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Mxz-ci-6P2" secondAttribute="trailing" id="9vU-Cy-AaU"/>
+                                                <constraint firstItem="Mxz-ci-6P2" firstAttribute="top" secondItem="h2d-Nv-zlT" secondAttribute="top" id="EkA-Qv-Kyo"/>
+                                                <constraint firstItem="Mxz-ci-6P2" firstAttribute="leading" secondItem="h2d-Nv-zlT" secondAttribute="leading" id="Hez-Px-SVU"/>
+                                                <constraint firstAttribute="bottom" secondItem="Mxz-ci-6P2" secondAttribute="bottom" id="vWT-Pl-ld6"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="207" height="207"/>
                                         <connections>
                                             <outlet property="uploadedImage" destination="Mxz-ci-6P2" id="1if-PD-0CL"/>
                                         </connections>
@@ -968,10 +973,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IRW-hz-5lD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="708"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="615"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5H-5C-LTw">
-                                <rect key="frame" x="10" y="772" width="394" height="31"/>
+                                <rect key="frame" x="10" y="723" width="394" height="31"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="D5H-5C-LTw" secondAttribute="height" multiplier="394:31" id="F19-ff-pwP"/>
