@@ -107,7 +107,7 @@ class AuthViewController: UIViewController, DatabaseListener {
         
     }
     
-    func onUserUploadChange(change: DatabaseChange, userUpload: [UIImage]) {
+    func onUserUploadChange(change: DatabaseChange, userUpload: [UserUpload]) {
         
     }
     

@@ -16,7 +16,7 @@ class AccountViewController: UIViewController, DatabaseListener {
     weak var databaseController: DatabaseProtocol?
     
     @IBOutlet weak var userUploadCollectionView: UICollectionView!
-    var userImages : [UIImage] = []
+    var userImages : [UserUpload] = []
     
     
     override func viewDidLoad() {
@@ -70,7 +70,7 @@ class AccountViewController: UIViewController, DatabaseListener {
         }
     }
     
-    func onUserUploadChange(change: DatabaseChange, userUpload: [UIImage]) {
+    func onUserUploadChange(change: DatabaseChange, userUpload: [UserUpload]) {
         userImages = userUpload
         userUploadCollectionView.reloadData()
     }
@@ -107,7 +107,7 @@ extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "uploadImageCell", for: indexPath) as! UploadImageCollectionViewCell
         
-        cell.uploadedImage.image = userImages[indexPath.row]
+        cell.uploadedImage.image = userImages[indexPath.row].image
         return cell
         
     }
@@ -125,7 +125,8 @@ extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataS
         // Create Action Handlers
         
         let delete = UIAlertAction(title: "Delete", style: .default) { (action) -> Void in
-            print("Item deleted at row \(indexPath.row)")
+            self.databaseController?.deleteArtwork(row: indexPath.row)
+            print("Item file \(String(describing: self.userImages[indexPath.row].storageLink))")
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in

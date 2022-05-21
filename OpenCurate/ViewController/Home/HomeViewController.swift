@@ -88,7 +88,7 @@ class HomeViewController: UIViewController, DatabaseListener {
         
     }
     
-    func onUserUploadChange(change: DatabaseChange, userUpload: [UIImage]) {
+    func onUserUploadChange(change: DatabaseChange, userUpload: [UserUpload]) {
         
     }
     

@@ -66,7 +66,7 @@ class UploadTableViewController: UITableViewController, DatabaseListener {
         tableView.reloadData()
     }
     
-    func onUserUploadChange(change: DatabaseChange, userUpload: [UIImage]) {
+    func onUserUploadChange(change: DatabaseChange, userUpload: [UserUpload]) {
         
     }
     

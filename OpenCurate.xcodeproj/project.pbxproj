@@ -22,6 +22,7 @@
 		B51DF39B282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DF39A282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift */; };
 		B5320B23283456A2007FB515 /* UploadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5320B22283456A2007FB515 /* UploadTableViewController.swift */; };
 		B5320B25283465D3007FB515 /* UploadSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5320B24283465D3007FB515 /* UploadSelectViewController.swift */; };
+		B53AEBA72838FD8400D7FB6C /* UserUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53AEBA62838FD8400D7FB6C /* UserUpload.swift */; };
 		B54BF1B9280FE2AD007F57C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BF1B8280FE2AD007F57C1 /* AppDelegate.swift */; };
 		B54BF1BB280FE2AD007F57C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BF1BA280FE2AD007F57C1 /* SceneDelegate.swift */; };
 		B54BF1C0280FE2AD007F57C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54BF1BE280FE2AD007F57C1 /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		B51DF39A282B96FC00A8FE91 /* UploadImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5320B22283456A2007FB515 /* UploadTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTableViewController.swift; sourceTree = "<group>"; };
 		B5320B24283465D3007FB515 /* UploadSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSelectViewController.swift; sourceTree = "<group>"; };
+		B53AEBA62838FD8400D7FB6C /* UserUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpload.swift; sourceTree = "<group>"; };
 		B54BF1B5280FE2AD007F57C1 /* OpenCurate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenCurate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54BF1B8280FE2AD007F57C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B54BF1BA280FE2AD007F57C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				B5EF758F2823A4F800B06269 /* FirebaseController.swift */,
 				B5EF75912823A51B00B06269 /* DatabaseProtocol.swift */,
 				B54CF0AB282C860D0050B103 /* UploadImage.swift */,
+				B53AEBA62838FD8400D7FB6C /* UserUpload.swift */,
 			);
 			path = LocalData;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				B5EF75942823AB4C00B06269 /* UIImageView+enableZoom.swift in Sources */,
 				B54BF1B9280FE2AD007F57C1 /* AppDelegate.swift in Sources */,
 				B5F5E1C0281D429500A6F1E3 /* ArtDepartmentViewController.swift in Sources */,
+				B53AEBA72838FD8400D7FB6C /* UserUpload.swift in Sources */,
 				B59B93EB281278FD0013ACAB /* UIView+Extension.swift in Sources */,
 				B5F1FC8F2812694900770B4F /* OnboardingViewController.swift in Sources */,
 				B59B93EE28127D2F0013ACAB /* OnboardingCollectionViewCell.swift in Sources */,

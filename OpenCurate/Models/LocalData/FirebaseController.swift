@@ -18,7 +18,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     var listeners = MulticastDelegate<DatabaseListener>()
     var uploadList: [UploadImage]
-    var userUpload: [UIImage]
+    var userUpload: [UserUpload]
     
     var authController: Auth
     var database: Firestore
@@ -36,7 +36,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         storage = Storage.storage()
         storageRef = storage.reference()
         uploadList = [UploadImage]()
-        userUpload = [UIImage]()
+        userUpload = [UserUpload]()
         artistRef = database.collection("artist")
         storageRef = storage.reference()
         authStatus = false
@@ -122,7 +122,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
         
     }
     
-    func fetchUserUploads(_ completion: @escaping ([UIImage]) -> Void) {
+    func fetchUserUploads(_ completion: @escaping ([UserUpload]) -> Void) {
         
         self.userUpload.removeAll()
         let group = DispatchGroup()
@@ -145,7 +145,11 @@ class FirebaseController: NSObject, DatabaseProtocol {
                     if let error = error {
                         print("Error fetching: \(error)")
                     }
-                    self.userUpload.append(UIImage(data: data!)!)
+                    let upload = UserUpload()
+                    upload.storageLink = storageURL as? Int
+                    upload.image = UIImage(data: data!)
+                    upload.id = document.documentID
+                    self.userUpload.append(upload)
                     print("Found image: \(String(describing: data))")
                     group.leave()
                 }
@@ -183,6 +187,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
     
     func addArtwork(uploadData: Data, uploadImage: UploadImage) {
         
+        let uploadUser = UserUpload()
         let timestamp = UInt(Date().timeIntervalSince1970)
         let imageRef = storageRef?.child("images/\(timestamp)")
         
@@ -195,14 +200,19 @@ class FirebaseController: NSObject, DatabaseProtocol {
         uploadImage.storageLink = Int(timestamp)
         uploadImage.artistUID = currentUser?.uid
         
+        // Setup UserUpload object
+        uploadUser.storageLink = uploadImage.storageLink
+        uploadUser.image = UIImage(data: uploadData)
+        
         uploadTask?.observe(.success) {
             // ADD IMAGES TO FIRESTORE DATABASE
             snapshot in
                 do {
                     if let artistRef = try self.artistRef?.addDocument(from: uploadImage) {
                         uploadImage.id = artistRef.documentID
+                        uploadUser.id = artistRef.documentID
                         print("Image uploaded to Firestore collection")
-                        self.userUpload.append(UIImage(data: uploadData)!)
+                        self.userUpload.append(uploadUser)
                        
                         self.listeners.invoke { (listener) in
                             if listener.listenerType == ListenerType.user || listener.listenerType == ListenerType.all {
@@ -222,8 +232,35 @@ class FirebaseController: NSObject, DatabaseProtocol {
         }
     }
     
-    func deleteArtwork() {
+    func deleteArtwork(row: Int) {
         
+        // Delete from Firestore Database
+        if let docId = userUpload[row].id {
+            artistRef?.document(docId).delete()
+        }
+        
+        // Delete from Firebase Storage
+        if let filePath = userUpload[row].storageLink {
+            let imageRef = storageRef?.child("images/\(filePath)")
+            imageRef?.delete() { error in
+                if let error = error {
+                    print(error)
+                } else {
+                    // File successfully deleted
+                }
+            }
+        }
+        
+        
+        self.userUpload.remove(at: row)
+        
+        // Invoke listeners
+        self.listeners.invoke { (listener) in
+            if listener.listenerType == ListenerType.user || listener.listenerType == ListenerType.all {
+                
+                listener.onUserUploadChange(change: .update, userUpload: self.userUpload)
+            }
+        }
     }
     
     
