@@ -233,7 +233,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mxz-ci-6P2">
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mxz-ci-6P2">
                                                     <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
                                                 </imageView>
                                             </subviews>

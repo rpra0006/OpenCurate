@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import simd
 
 class AccountViewController: UIViewController, DatabaseListener {
     
@@ -114,5 +115,27 @@ extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // Create UIAlertController
+        let alertMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this?", preferredStyle: .alert)
+        
+        // Create Action Handlers
+        
+        let delete = UIAlertAction(title: "Delete", style: .default) { (action) -> Void in
+            print("Item deleted at row \(indexPath.row)")
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            print("Cancel button")
+        }
+        
+        alertMessage.addAction(delete)
+        alertMessage.addAction(cancel)
+        
+        // Present alert message
+        self.present(alertMessage, animated: true, completion: nil)
     }
 }
