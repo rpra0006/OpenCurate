@@ -120,17 +120,17 @@ extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         // Create UIAlertController
-        let alertMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this?", preferredStyle: .alert)
+        let alertMessage = UIAlertController(title: "Confirmation", message: "Are you sure you want to delete this image?", preferredStyle: .alert)
         
         // Create Action Handlers
         
-        let delete = UIAlertAction(title: "Delete", style: .default) { (action) -> Void in
+        let delete = UIAlertAction(title: "Delete", style: .destructive) { (action) -> Void in
             self.databaseController?.deleteArtwork(row: indexPath.row)
             print("Item file \(String(describing: self.userImages[indexPath.row].storageLink))")
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
-            print("Cancel button")
+            // Close
         }
         
         alertMessage.addAction(delete)
