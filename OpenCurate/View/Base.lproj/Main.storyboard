@@ -103,7 +103,7 @@
                                                         <rect key="frame" x="311" y="13" width="65" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" image="arrow.right" catalog="system">
-                                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="baseBackgroundColor" red="0.0" green="0.18823529411764706" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <segue destination="Dtx-xK-wTA" kind="show" id="R0b-gZ-DpX"/>
@@ -252,11 +252,11 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mf-h3-Xmb">
-                                <rect key="frame" x="20" y="735.5" width="374" height="28.5"/>
+                                <rect key="frame" x="20" y="725.5" width="374" height="28.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Images">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
-                                    <color key="baseBackgroundColor" systemColor="linkColor"/>
+                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="zD9-cL-MYJ" kind="show" id="pga-fm-Mo3"/>
@@ -267,15 +267,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MXj-Zf-zjW" firstAttribute="top" secondItem="iec-CB-U1F" secondAttribute="top" id="1fF-J5-5Rm"/>
-                            <constraint firstItem="3Mf-h3-Xmb" firstAttribute="top" secondItem="Zpg-E9-lxw" secondAttribute="bottom" constant="47" id="7ib-hB-AZ9"/>
-                            <constraint firstItem="iec-CB-U1F" firstAttribute="trailing" secondItem="3Mf-h3-Xmb" secondAttribute="trailing" constant="20" id="9Qy-J5-GsD"/>
                             <constraint firstItem="Zpg-E9-lxw" firstAttribute="top" secondItem="MXj-Zf-zjW" secondAttribute="bottom" constant="8" id="BYR-MW-JB0"/>
-                            <constraint firstItem="iec-CB-U1F" firstAttribute="bottom" secondItem="3Mf-h3-Xmb" secondAttribute="bottom" id="Okc-xm-70R"/>
+                            <constraint firstItem="3Mf-h3-Xmb" firstAttribute="top" secondItem="Zpg-E9-lxw" secondAttribute="bottom" constant="37" id="If1-Vy-Udj"/>
                             <constraint firstItem="MXj-Zf-zjW" firstAttribute="leading" secondItem="iec-CB-U1F" secondAttribute="leading" id="WWx-Tc-ISN"/>
+                            <constraint firstItem="iec-CB-U1F" firstAttribute="bottom" secondItem="3Mf-h3-Xmb" secondAttribute="bottom" constant="10" id="ZNz-9Z-cZG"/>
+                            <constraint firstItem="3Mf-h3-Xmb" firstAttribute="leading" secondItem="iec-CB-U1F" secondAttribute="leading" constant="20" id="ahy-x2-viM"/>
+                            <constraint firstItem="iec-CB-U1F" firstAttribute="trailing" secondItem="3Mf-h3-Xmb" secondAttribute="trailing" constant="20" id="eZi-g3-z5Q"/>
                             <constraint firstItem="iec-CB-U1F" firstAttribute="trailing" secondItem="MXj-Zf-zjW" secondAttribute="trailing" id="fNe-Fa-PWF"/>
                             <constraint firstItem="Zpg-E9-lxw" firstAttribute="trailing" secondItem="iec-CB-U1F" secondAttribute="trailing" id="n2j-jJ-ejJ"/>
                             <constraint firstItem="Zpg-E9-lxw" firstAttribute="leading" secondItem="iec-CB-U1F" secondAttribute="leading" id="nEs-dl-CHZ"/>
-                            <constraint firstItem="3Mf-h3-Xmb" firstAttribute="leading" secondItem="iec-CB-U1F" secondAttribute="leading" constant="20" id="qex-bs-pfm"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -342,7 +342,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Register">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                    <color key="baseBackgroundColor" red="0.0" green="0.18823529411764706" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -972,14 +972,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IRW-hz-5lD">
-                                <rect key="frame" x="0.0" y="88" width="414" height="615"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5H-5C-LTw">
-                                <rect key="frame" x="10" y="723" width="394" height="31"/>
+                                <rect key="frame" x="10" y="772" width="394" height="31"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="D5H-5C-LTw" secondAttribute="height" multiplier="394:31" id="F19-ff-pwP"/>
+                                    <constraint firstAttribute="height" constant="31" id="qhY-GL-3cb"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
@@ -996,17 +993,44 @@
                                     <action selector="uploadImage:" destination="zD9-cL-MYJ" eventType="touchUpInside" id="3z6-Bd-WCQ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter art title..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsO-OU-rf0">
+                                <rect key="frame" x="10" y="649" width="394" height="34"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="9a9-pk-mqR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter artist name..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KiA-YP-n3m">
+                                <rect key="frame" x="10" y="693" width="394" height="34"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="awC-Dl-Vbc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IRW-hz-5lD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="580"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hAA-PY-yBG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="IRW-hz-5lD" firstAttribute="trailing" secondItem="hAA-PY-yBG" secondAttribute="trailing" id="4r5-to-Nnq"/>
-                            <constraint firstItem="D5H-5C-LTw" firstAttribute="top" secondItem="IRW-hz-5lD" secondAttribute="bottom" constant="20" id="BB4-RQ-oFc"/>
-                            <constraint firstItem="D5H-5C-LTw" firstAttribute="leading" secondItem="hAA-PY-yBG" secondAttribute="leading" constant="10" id="jZH-ET-kNT"/>
-                            <constraint firstItem="IRW-hz-5lD" firstAttribute="leading" secondItem="hAA-PY-yBG" secondAttribute="leading" id="lBW-P1-54G"/>
-                            <constraint firstItem="hAA-PY-yBG" firstAttribute="bottom" secondItem="D5H-5C-LTw" secondAttribute="bottom" constant="10" id="lZZ-tN-erz"/>
-                            <constraint firstItem="IRW-hz-5lD" firstAttribute="top" secondItem="hAA-PY-yBG" secondAttribute="top" id="wep-Sd-Ci6"/>
-                            <constraint firstItem="hAA-PY-yBG" firstAttribute="trailing" secondItem="D5H-5C-LTw" secondAttribute="trailing" constant="10" id="y8C-Ua-TQl"/>
+                            <constraint firstItem="hAA-PY-yBG" firstAttribute="trailing" secondItem="D5H-5C-LTw" secondAttribute="trailing" constant="10" id="09s-Tb-frr"/>
+                            <constraint firstItem="hAA-PY-yBG" firstAttribute="bottom" secondItem="D5H-5C-LTw" secondAttribute="bottom" constant="10" id="Aro-mN-BOv"/>
+                            <constraint firstItem="xsO-OU-rf0" firstAttribute="top" secondItem="IRW-hz-5lD" secondAttribute="bottom" constant="25" id="U4s-jc-C6w"/>
+                            <constraint firstItem="IRW-hz-5lD" firstAttribute="leading" secondItem="hAA-PY-yBG" secondAttribute="leading" id="XtA-OJ-sWc"/>
+                            <constraint firstItem="IRW-hz-5lD" firstAttribute="trailing" secondItem="hAA-PY-yBG" secondAttribute="trailing" id="ZL0-Qq-m8C"/>
+                            <constraint firstItem="xsO-OU-rf0" firstAttribute="leading" secondItem="hAA-PY-yBG" secondAttribute="leading" constant="10" id="cbg-gU-ftJ"/>
+                            <constraint firstItem="hAA-PY-yBG" firstAttribute="trailing" secondItem="KiA-YP-n3m" secondAttribute="trailing" constant="10" id="cvX-tY-kvc"/>
+                            <constraint firstItem="KiA-YP-n3m" firstAttribute="leading" secondItem="hAA-PY-yBG" secondAttribute="leading" constant="10" id="k6R-UF-MI0"/>
+                            <constraint firstItem="hAA-PY-yBG" firstAttribute="trailing" secondItem="xsO-OU-rf0" secondAttribute="trailing" constant="10" id="lfH-Bj-ly1"/>
+                            <constraint firstItem="D5H-5C-LTw" firstAttribute="top" secondItem="KiA-YP-n3m" secondAttribute="bottom" constant="45" id="o2J-ps-q6W"/>
+                            <constraint firstItem="D5H-5C-LTw" firstAttribute="leading" secondItem="hAA-PY-yBG" secondAttribute="leading" constant="10" id="owi-b2-IbF"/>
+                            <constraint firstItem="IRW-hz-5lD" firstAttribute="top" secondItem="hAA-PY-yBG" secondAttribute="top" id="qhY-bM-35k"/>
+                            <constraint firstItem="KiA-YP-n3m" firstAttribute="top" secondItem="xsO-OU-rf0" secondAttribute="bottom" constant="10" id="yeH-JV-9YO"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="0gL-Nr-6zZ"/>
@@ -1020,12 +1044,14 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="artTitleLabel" destination="xsO-OU-rf0" id="e4F-bI-W2z"/>
+                        <outlet property="artistNameLabel" destination="KiA-YP-n3m" id="2LS-rk-iAI"/>
                         <outlet property="imageView" destination="IRW-hz-5lD" id="AuG-IA-cNd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8GA-Fo-bTR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4572" y="625"/>
+            <point key="canvasLocation" x="4571.0144927536239" y="624.77678571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MMG-ac-8hs">
@@ -1058,8 +1084,8 @@
         <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

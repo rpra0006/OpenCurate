@@ -11,6 +11,8 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
 
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var artTitleLabel: UITextField!
+    @IBOutlet weak var artistNameLabel: UITextField!
     
     weak var databaseController: DatabaseProtocol?
     
@@ -58,6 +60,16 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func saveImage(_ sender: Any) {
         
+        // Optional art title and artist name fields
+        if let title = artTitleLabel.text {
+            uploadImage.imageTitle = title
+        }
+        
+        if let artistName = artistNameLabel.text {
+            uploadImage.artistName = artistName
+        }
+        
+        // Must have images
         guard let image = imageView.image, image != UIImage(named: "placeholderUpload") else{
             displayMessage(title: "Image not found", message: "Please select an image")
             return

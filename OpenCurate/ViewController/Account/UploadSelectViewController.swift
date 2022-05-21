@@ -21,7 +21,8 @@ class UploadSelectViewController: UIViewController {
         uploadImageView.image = UIImage(data: (uploadImage?.image)!)
         uploadImageView.enableZoom()
         
-        imageTitleLabel.text = String((uploadImage?.storageLink)!)
+        let title = uploadImage?.imageTitle ?? "N/A"
+        imageTitleLabel.text = title
         
         let username = uploadImage?.artistName ?? "N/A"
         artistUsernameLabel.text = username
