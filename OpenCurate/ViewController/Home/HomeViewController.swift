@@ -4,6 +4,9 @@
 //
 //  Created by Richard Pranjatno on 22/4/2022.
 //
+//  Inspiration for some of the UI layout and code logic were from Emmanuel Okwara.
+// https://www.youtube.com/watch?v=He6pfuCZUGk&list=PLgBVHL8joMCthoqCwsWAUWIiyJaPrqPA4&ab_channel=EmmanuelOkwara
+//
 
 import UIKit
 

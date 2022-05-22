@@ -36,6 +36,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Update region on map view load and zoom in to current location
+        // Reference to retrieving user current location:
+        // https://stackoverflow.com/questions/25449469/show-current-location-and-update-location-in-mkmapview-in-swift
         
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         
@@ -44,6 +46,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let region = MKCoordinateRegion(center: locValue, span: span)
         mapView.setRegion(region, animated: true)
         
+        // Create annotation for user's current location
         let annotation = MKPointAnnotation()
         annotation.coordinate = locValue
         annotation.title = "Your Location"
@@ -55,6 +58,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     func showArtGalleries(){
+        // Reference for location of interest
+        // https://johncodeos.com/how-to-display-location-and-routes-with-corelocation-mapkit-using-swift/
         
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = "art gallery"
@@ -83,6 +88,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // Reference for MapView annotations
+        // https://johncodeos.com/how-to-display-location-and-routes-with-corelocation-mapkit-using-swift/
         
         let id = MKMapViewDefaultAnnotationViewReuseIdentifier
         

@@ -69,6 +69,10 @@ class FirebaseController: NSObject, DatabaseProtocol {
     func parseUploadSnapshot(snapshot: QuerySnapshot){
         
         let group = DispatchGroup()
+        /*
+        https://stackoverflow.com/questions/35906568/wait-until-swift-for-loop-with-asynchronous-network-requests-finishes-executing
+          DispatchGroup allows asynchronous callback when all requests finishes.
+         */
         
         snapshot.documentChanges.forEach{ (change) in
             group.enter()
@@ -188,12 +192,13 @@ class FirebaseController: NSObject, DatabaseProtocol {
     func addArtwork(uploadData: Data, uploadImage: UploadImage) {
         
         let uploadUser = UserUpload()
-        let timestamp = UInt(Date().timeIntervalSince1970)
+        let timestamp = UInt(Date().timeIntervalSince1970) // Get current timestamp
         let imageRef = storageRef?.child("images/\(timestamp)")
         
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpg"
         
+        // Upload to Firebase Storage
         let uploadTask = imageRef?.putData(uploadData, metadata: metadata)
         
         // Setup UploadImage object
@@ -246,6 +251,7 @@ class FirebaseController: NSObject, DatabaseProtocol {
                 if let error = error {
                     print(error)
                 } else {
+                    print("Image deleted")
                     // File successfully deleted
                 }
             }

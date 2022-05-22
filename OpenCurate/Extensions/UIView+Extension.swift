@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 extension UIView {
+    
+    // Extension for UIButton to allow rounded borders
+    // Reference: https://stackoverflow.com/questions/26961274/how-can-i-make-a-button-have-a-rounded-border-in-swift
     @IBInspectable var cornerRadius: CGFloat {
         get { return cornerRadius }
         set {

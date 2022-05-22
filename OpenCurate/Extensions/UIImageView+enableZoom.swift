@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 extension UIImageView {
+    // Enable zooming for UIImages by calling enableZoom().
+    // Reference: John Lima https://stackoverflow.com/questions/30014241/uiimageview-pinch-zoom-swift
     
     func enableZoom() {
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(startZooming(_:)))
