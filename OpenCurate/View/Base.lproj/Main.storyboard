@@ -202,6 +202,47 @@
             </objects>
             <point key="canvasLocation" x="4460.8695652173919" y="-1021.2053571428571"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Cn4-gJ-7WI">
+            <objects>
+                <viewController id="rq3-z4-EaJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hJs-TK-0kp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="new-3o-KPs">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <mutableString key="text">This app utilises the following third-party code, Use of which is hereby acknowledged.
+
+Firebase  (FIrebaseAuth, Firestore)
+
+Copyright 2017-2022 Google 
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. 
+You may obtain a copy of the License at 
+      http://www.apache.org/licenses/LICENSE-2.0 
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License.  The Metropolitan Museum of Art Collection API https://metmuseum.github.io  Food Ordering App Demo (OnboardingView, HomeView) https://www.youtube.com/c/EmmanuelOkwara  Looka (OpenCurate Logo) https://looka.com  Coolors (Color Palette) hhtps://coolors.co  FIT3178 Lab and Workshop Demos  Acknowledgement for specific sections can be found as documentation inside the source code.</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eR1-BT-YK6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eR1-BT-YK6" firstAttribute="trailing" secondItem="new-3o-KPs" secondAttribute="trailing" id="f4b-2J-lhJ"/>
+                            <constraint firstItem="new-3o-KPs" firstAttribute="leading" secondItem="eR1-BT-YK6" secondAttribute="leading" id="oNy-Kq-7ed"/>
+                            <constraint firstItem="eR1-BT-YK6" firstAttribute="bottom" secondItem="new-3o-KPs" secondAttribute="bottom" id="sjQ-x3-zWL"/>
+                            <constraint firstItem="new-3o-KPs" firstAttribute="top" secondItem="eR1-BT-YK6" secondAttribute="top" id="vbv-Rs-Fiv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aPY-sT-ZKT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yd0-8t-vTU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3551" y="1428"/>
+        </scene>
         <!--Account View Controller-->
         <scene sceneID="xWw-9O-5PI">
             <objects>
@@ -280,6 +321,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="LJK-un-aXs">
+                        <barButtonItem key="leftBarButtonItem" title="About" id="TFt-2B-1l4">
+                            <connections>
+                                <segue destination="rq3-z4-EaJ" kind="show" id="vpF-ug-wnV"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="JKy-Fk-e4r">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
@@ -1084,6 +1130,9 @@
         <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
